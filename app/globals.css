@@ -127,3 +127,67 @@
     @apply font-sans;
     }
 }
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 6px;
+  background: #ffffff00;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #46464600;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+
+/* Marquee animation */
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.phone-rotation {
+  animation: phone-rotation 10s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes phone-rotation {
+  0%,
+  10% {
+    transform: rotateZ(-8deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateZ(-8deg) rotateY(360deg);
+  }
+}
+
+.btn-bg {
+  background: linear-gradient(96deg, #D437ED 5.3%, #C4674B 33.08%, #D9EF34 62.81%, #8263F4 88.72%);
+  filter: blur(10px);
+  opacity: 0.4;
+}
