@@ -139,14 +139,14 @@ export default function AnimateHeading({
             {
               opacity: 0,
               y: -108,
-              filter: "blur(8px)",
+              filter: "blur(6px)",
             },
             {
               opacity: 1,
               y: 0,
               filter: "blur(0px)",
-              duration: 0.2,
-              ease: "sine.out",
+              duration: 0.4,
+              ease: "power2.out",
             },
             startTime,
           )
@@ -156,11 +156,11 @@ export default function AnimateHeading({
               replica,
               {
                 opacity: 0,
-                filter: "blur(2px)",
-                duration: 0.1,
-                ease: "sine.in",
+                filter: "blur(6px)",
+                duration: 0.2,
+                ease: "power1.in",
               },
-              startTime + 0.2,
+              startTime + 0.4,
             )
           }
         })

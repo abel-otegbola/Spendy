@@ -13,7 +13,7 @@ export default function Page() {
     <main className="bg-[url('/bg.png')] bg-contain bg-top bg-no-repeat">
       <Topbar />
       <header className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] lg:px-[25%] md:px-[15%] p-[5%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center sm:items-center sm:text-center gap-4">
-        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[48px] leading-[120%] tracking-[-2%]">
+        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[40px] leading-[120%] tracking-[-2%]">
           Efficiently Track and Manage Your <span className="opacity-50">Spending</span>
         </AnimateHeading>
         <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[60%] mx-auto font-medium opacity-75">
@@ -30,9 +30,9 @@ export default function Page() {
         </div>
 
         <ScrollAnimate animation="zoomIn" start="top 80%">
-        <div className="relative mt-12 w-fit">
-          <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] md:rounded-[36px] rounded-[24px] shadow-[0px_5px_20px_#11111120]">
-            <span className="bg-white dark:bg-[#242424] h-[99%] w-[98%] absolute rounded-l border-6 border-[#181818] dark:border-[#000] md:rounded-[34px] rounded-[12px]"></span>
+        <div className="relative mt-12 w-fit mx-auto">
+          <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] rounded-[36px] shadow-[0px_5px_20px_#11111120]">
+            <span className="bg-white dark:bg-[#242424] h-[99%] w-[98%] absolute rounded border-6 border-[#181818] dark:border-[#000] rounded-[34px]"></span>
             <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -left-[5px] rounded-l"></span>
             <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-36 -left-[5px] rounded-l"></span>
             <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -right-[5px] rounded-r"></span>
@@ -65,12 +65,9 @@ export default function Page() {
       <section className="py-[100px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] opacity-50">Why Spendy</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[20px]">
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             A clearer view of your money <br />and a smarter path forward
           </AnimateHeading>
-            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center font-medium opacity-75">
-            Spendy brings your spending, saving, and investing into one calm, intelligent experience built to help you make confident financial decisions.
-          </ScrollTextReveal>
         </div>
 
         <div className="grid sm:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto py-12">
@@ -95,7 +92,7 @@ export default function Page() {
           <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             The essentials for building lasting financial momentum
           </AnimateHeading>
-            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center font-medium opacity-75">
+            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
             Thoughtful tools that turn everyday financial decisions into steady, measurable progress.
           </ScrollTextReveal>
         </div>
