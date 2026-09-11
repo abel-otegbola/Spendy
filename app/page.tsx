@@ -3,11 +3,13 @@ import AnimateHeading from "../components/animations/animateHeading"
 import ScrollTextReveal from "../components/animations/scroll-text-reveal"
 import ScrollAnimate from "../components/animations/scrollAnimation"
 import SlotCounter from "@/components/animations/slot-counter"
+import Topbar from "@/components/sections/topbar"
 
 export default function Page() {
   return (
-    <main>
-      <header className="md:px-[15%] p-[5%] md:w-[80%] md:pt-[5%] md:pt-[10%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
+    <main className="bg-[url('/bg.png')] bg-contain bg-top bg-no-repeat">
+      <Topbar />
+      <header className=" md:px-[15%] p-[5%] md:w-[80%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
         <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[36px] leading-[120%] tracking-[-2%]">
           Efficiently Track and Manage Your <span className="opacity-50">Spending</span>
         </AnimateHeading>
@@ -24,7 +26,7 @@ export default function Page() {
           </ScrollAnimate>
         </div>
 
-        <ScrollAnimate animation="zoomIn" start="top 60%">
+        <ScrollAnimate animation="zoomIn" start="top 80%">
         <div className="relative mt-12 w-fit">
           <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-6 border-[#f3f3f3] dark:border-[#121212] md:rounded-[36px] rounded-[24px] shadow-[0px_5px_20px_#11111120]">
             <span className="bg-[#e3e3e3] dark:bg-[#101010] h-12 w-[4px] absolute top-20 -left-[6px] rounded-l"></span>
