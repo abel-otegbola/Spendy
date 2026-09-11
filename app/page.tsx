@@ -4,13 +4,16 @@ import ScrollTextReveal from "../components/animations/scroll-text-reveal"
 import ScrollAnimate from "../components/animations/scrollAnimation"
 import SlotCounter from "@/components/animations/slot-counter"
 import Topbar from "@/components/sections/topbar"
+import StopOnScroll from "@/components/animations/stop_on_scroll"
+import FeaturesCard from "@/components/cards/featuresCard"
+import FAQs from "../components/sections/faqs"
 
 export default function Page() {
   return (
     <main className="bg-[url('/bg.png')] bg-contain bg-top bg-no-repeat">
       <Topbar />
-      <header className=" md:px-[15%] p-[5%] md:w-[80%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
-        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[36px] leading-[120%] tracking-[-2%]">
+      <header className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] lg:px-[25%] md:px-[15%] p-[5%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center sm:items-center sm:text-center gap-4">
+        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[48px] leading-[120%] tracking-[-2%]">
           Efficiently Track and Manage Your <span className="opacity-50">Spending</span>
         </AnimateHeading>
         <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[60%] mx-auto font-medium opacity-75">
@@ -28,13 +31,14 @@ export default function Page() {
 
         <ScrollAnimate animation="zoomIn" start="top 80%">
         <div className="relative mt-12 w-fit">
-          <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-6 border-[#f3f3f3] dark:border-[#121212] md:rounded-[36px] rounded-[24px] shadow-[0px_5px_20px_#11111120]">
-            <span className="bg-[#e3e3e3] dark:bg-[#101010] h-12 w-[4px] absolute top-20 -left-[6px] rounded-l"></span>
-            <span className="bg-[#e3e3e3] dark:bg-[#101010] h-12 w-[4px] absolute top-36 -left-[6px] rounded-l"></span>
-            <span className="bg-[#e3e3e3] dark:bg-[#101010] h-12 w-[4px] absolute top-20 -right-[6px] rounded-r"></span>
-            <span className="bg-[#f3f3f3] dark:bg-[#121212] h-6 w-24 absolute top-4 rounded-full"></span>
+          <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] md:rounded-[36px] rounded-[24px] shadow-[0px_5px_20px_#11111120]">
+            <span className="bg-white dark:bg-[#242424] h-[99%] w-[98%] absolute rounded-l border-6 border-[#181818] dark:border-[#000] md:rounded-[34px] rounded-[12px]"></span>
+            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -left-[5px] rounded-l"></span>
+            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-36 -left-[5px] rounded-l"></span>
+            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -right-[5px] rounded-r"></span>
+            <span className="bg-[#202020] dark:bg-[#000] h-6 w-24 absolute top-4 rounded-full"></span>
             <span className="bg-white dark:bg-[#202020] h-2 w-2 absolute -translate-x-9 top-6 rounded-full"></span>
-            <span className="bg-[#f3f3f3] dark:bg-[#121212] h-1 w-20 absolute bottom-5 rounded-full"></span>
+            <span className="bg-[#202020] dark:bg-[#121212] h-1 w-20 absolute bottom-5 rounded-full"></span>
           </div>
         </div>
         </ScrollAnimate>
@@ -42,107 +46,81 @@ export default function Page() {
       </header>
 
       {/* ========== MARQUEE ========== */}
-      <section className="py-4 overflow-hidden md:w-[70%] mx-auto md:mt-0 mt-12">
-          <div className="marquee-track">
-              {[0, 1].map((rep) => (
-                  <div key={rep} className="marquee-group flex items-center">
-                      {["Bank", "Invest", "Budget", "Pay bills"].map((item, i) => (
-                          <div key={`${rep}-${i}`} className="flex items-center gap-20 px-20">
-                              <span className="text-sm font-semibold whitespace-nowrap uppercase">{item}</span>
-                          </div>
-                      ))}
-                  </div>
-              ))}
+      <section className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] pt-6 pb-12">
+        <div className="overflow-hidden lg:w-[70%] md:w-[90%] mx-auto">
+            <div className="marquee-track">
+                {[0, 1].map((rep) => (
+                    <div key={rep} className="marquee-group flex items-center">
+                        {["Bank", "Invest", "Budget", "Pay bills"].map((item, i) => (
+                            <div key={`${rep}-${i}`} className="flex items-center gap-20 px-20">
+                                <span className="text-sm font-semibold whitespace-nowrap uppercase">{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
           </div>
       </section>
 
       <section className="py-[100px]">
-        <div className="flex flex-col items-center justify-center gap-4 md:w-[55%] mx-auto w-full px-6">
+        <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] opacity-50">Why Spendy</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[20px]">
             A clearer view of your money <br />and a smarter path forward
           </AnimateHeading>
-            <ScrollTextReveal repeat={true} tag="p" className="md:w-[55%] text-center font-medium opacity-75">
+            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center font-medium opacity-75">
             Spendy brings your spending, saving, and investing into one calm, intelligent experience built to help you make confident financial decisions.
           </ScrollTextReveal>
         </div>
 
-        <div className="grid sm:grid-cols-3 md:w-[70%] mx-auto py-12">
-          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
-              <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="120K" /></h2>
+        <div className="grid sm:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto py-12">
+          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="120K" /></h2>
               <p className="opacity-50">Businesses growing with Spendy</p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
-              <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="$250M" /></h2>
+          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="$250M" /></h2>
               <p className="opacity-50">Revenue tracked</p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-4 py-8 w-full">
-              <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="90%" /></h2>
+          <div className="flex flex-col justify-center items-center gap-4 py-8 w-full text-center">
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="90%" /></h2>
               <p className="opacity-50">Average growth reported</p>
           </div>
         </div>
       </section>
 
       <section className="py-[100px] bg-gray-100 dark:bg-[#121212]">
-        <div className="flex flex-col items-center justify-center gap-4 md:w-[55%] mx-auto w-full mb-8 px-6">
+        <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full mb-8 px-6">
           <h1 className="uppercase font-medium text-[14px] opacity-50">Features</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             The essentials for building lasting financial momentum
           </AnimateHeading>
-            <ScrollTextReveal repeat={true} tag="p" className="md:w-[55%] text-center font-medium opacity-75">
+            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center font-medium opacity-75">
             Thoughtful tools that turn everyday financial decisions into steady, measurable progress.
           </ScrollTextReveal>
         </div>
-
-        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
-          <div className="flex flex-col gap-4 md:w-[45%]">
-            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
-              Budgeting
-            </AnimateHeading>
-              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
-              Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.
-            </ScrollTextReveal>
-          </div>
-
-          <div className="bg-white dark:bg-[#202020] h-[400px] md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
-
-          </div>
-        </div>
-
-        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
-          <div className="bg-white dark:bg-[#202020] h-[400px] md:order-1 order-2 md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
-
-          </div>
-          <div className="flex flex-col gap-4 md:w-[45%] md:order-2 order-1">
-            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
-              Saving
-            </AnimateHeading>
-              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
-              Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.
-            </ScrollTextReveal>
-          </div>
-
-        </div>
-
-        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
-          <div className="flex flex-col gap-4 md:w-[45%]">
-            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
-              Investing
-            </AnimateHeading>
-              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
-              Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.
-            </ScrollTextReveal>
-          </div>
-
-          <div className="bg-white dark:bg-[#202020] h-[400px] md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
-
-          </div>
+        
+        <div className="lg:px-[15%] md:px-[5%] px-4 py-12 md:h-[3790px] min-[500px]:h-[1720px] h-auto">
+          <StopOnScroll>
+            {
+              [
+                { id: 0, heading: "Banking", text: "Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.", img: "/features_img_1.webp" },
+                { id: 1, heading: "Saving", text: "Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.", img: "/features_img_2.webp" },
+                { id: 2, heading: "Investing", text: "Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.", img: "/features_img_3.webp" },
+                { id: 3, heading: "Budgeting", text: "Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.", img: "/features_img_4.webp" },
+              ].map((item, index) => (
+                <FeaturesCard key={item.id} index={index} heading={item.heading} text={item.text} img={item.img} />
+              ))
+            }
+          </StopOnScroll>
         </div>
       
       </section>
 
+      <FAQs />
+
       <section className="md:mx-[15%] mx-6 md:my-[100px] my-12 py-[47px] px-6 md:rounded-[20px] rounded-[10px] bg-gray-100 dark:bg-[#121212] flex flex-col gap-4 justify-center items-center text-center">
-        <div className="md:p-[5%] md:w-[45%] md:py-[5%] py-[10%] md:mx-auto flex flex-col justify-center md:items-center md:text-center gap-4 z-2 overflow-hidden">
+        <div className="md:p-[5%] lg:w-[45%] md:w-[70%] md:py-[5%] py-[10%] md:mx-auto flex flex-col justify-center md:items-center md:text-center gap-4 z-2 overflow-hidden">
           <AnimateHeading repeat={true} tag="h1" className="font-semibold 2xl:text-[32px] sm:text-[28px] text-[24px] leading-[130%]">
             Ready to manage and grow your finances
           </AnimateHeading>

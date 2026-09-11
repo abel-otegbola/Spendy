@@ -14,7 +14,7 @@ export default function Topbar() {
     const [openSubMenu, setOpenSubMenu] = useState("")
 
     return (
-        <div className="flex items-center justify-between md:px-[15%] px-[5%] backdrop-blur-sm py-2 sticky top-0 z-5">
+        <div className="flex items-center justify-between lg:px-[15%] md:px-[5%] px-[5%] backdrop-blur-sm py-2 sticky top-0 z-5">
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
                 <div className="flex flex-col gap-0">
@@ -42,7 +42,7 @@ export default function Topbar() {
                                 <span className="font-medium">{link.title}</span>
                                 { link?.subMenu && <ChevronDownIcon className={`duration-500 ${!link.subMenu ? "rotate-[180deg]" : openSubMenu === link.title ? "rotate-[180deg]" : ""}` } size={14} /> }
                             </Link>
-                            <div className={`md:w-[70%] mx-auto absolute left-[15%] duration-500 ${openSubMenu === link.title ? "top-[54px] opacity-100": "top-[-1000%] opacity-0"} z-[-1]`}>
+                            <div className={`lg:w-[70%] md:w-[90%] mx-auto absolute left-[15%] duration-500 ${openSubMenu === link.title ? "top-[54px] opacity-100": "top-[-1000%] opacity-0"} z-[-1]`}>
                                 <div className="px-[3%] py-8 w-full bg-white dark:bg-[#101010] border border-input/[0.6] md:rounded-[12px] rounded-md shadow-[0px_20px_120px_0px_#10101020] duration-300">
                                 { link?.subMenu && link.subMenu }
                                 </div>

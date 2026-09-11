@@ -16,7 +16,7 @@ export default function Footer() {
     ];
     
     return (
-        <footer className="md:pb-0 pb-[32px] bg-gradient-to-b from-[#121212] to-[#000] md:px-[15%] px-6 py-16 text-white">
+        <footer className="md:pb-0 pb-[32px] bg-gradient-to-b from-[#121212] to-[#000] lg:px-[15%] md:px-[5%] px-6 py-16 text-white">
             <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-12 py-[40px]">
             <div className="md:col-span-2 text-white flex flex-col gap-5">
                 <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
