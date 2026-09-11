@@ -3,7 +3,7 @@
 export default function FeaturesCard({ index, heading, text }: { index: number; heading: string, text: string, img: string }) {
     return (
         <div className={`bg-white dark:bg-[#101010] md:rounded-[20px] rounded-[10px] w-full p-4 border border-gray-500/[0.1] flex xl:flex-row flex-col md:gap-[72px] gap-8 overflow-y-auto`} style={{ zIndex: index+2, top: (index * 16) + "px"}}>
-            <div className="flex flex-col justify-between xl:w-[45%] w-full max-[480px]:gap-3 md:px-8 px-4 py-8">
+            <div className="flex flex-col justify-between xl:w-[45%] w-full max-[480px]:gap-3 md:px-8 px-0 py-8">
                 <div className="flex items-center gap-4">
                     {/* <p className="opacity-50 uppercase text-lg ">0{index + 1}</p> */}
                     <h1 className="font-semibold 2xl:text-[28px] lg:text-[20px] md:w-[75%] text-[18px] tracking-[-0.6px] leading-[34px]">{heading}</h1>

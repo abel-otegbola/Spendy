@@ -145,7 +145,7 @@ export default function AnimateHeading({
               opacity: 1,
               y: 0,
               filter: "blur(0px)",
-              duration: 0.4,
+              duration: 0.2,
               ease: "power2.out",
             },
             startTime,
@@ -157,10 +157,10 @@ export default function AnimateHeading({
               {
                 opacity: 0,
                 filter: "blur(6px)",
-                duration: 0.2,
+                duration: 0.1,
                 ease: "power1.in",
               },
-              startTime + 0.4,
+              startTime + 0.1,
             )
           }
         })
