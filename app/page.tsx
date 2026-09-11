@@ -24,7 +24,7 @@ export default function Page() {
           </ScrollAnimate>
         </div>
 
-        <ScrollAnimate animation="zoomIn" start="top 40%">
+        <ScrollAnimate animation="zoomIn" start="top 60%">
         <div className="relative mt-12 w-fit">
           <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-6 border-[#f3f3f3] dark:border-[#121212] md:rounded-[36px] rounded-[24px] shadow-[0px_5px_20px_#11111120]">
             <span className="bg-[#e3e3e3] dark:bg-[#101010] h-12 w-[4px] absolute top-20 -left-[6px] rounded-l"></span>
