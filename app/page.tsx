@@ -57,30 +57,88 @@ export default function Page() {
       </section>
 
       <section className="py-[100px]">
-        <div className="flex flex-col items-center justify-center gap-4 md:w-[55%] mx-auto w-full">
-          <h1 className="uppercase font-medium text-[14px] opacity-50">About Spendy</h1>
+        <div className="flex flex-col items-center justify-center gap-4 md:w-[55%] mx-auto w-full px-6">
+          <h1 className="uppercase font-medium text-[14px] opacity-50">Why Spendy</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[20px]">
-            Financial experience <br />to grow and build your finances
+            A clearer view of your money <br />and a smarter path forward
           </AnimateHeading>
             <ScrollTextReveal repeat={true} tag="p" className="md:w-[55%] text-center font-medium opacity-75">
-            We provide you with the products and tools to grow your finances efficiently
+            Spendy brings your spending, saving, and investing into one calm, intelligent experience built to help you make confident financial decisions.
           </ScrollTextReveal>
         </div>
 
         <div className="grid sm:grid-cols-3 md:w-[70%] mx-auto py-12">
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
               <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="120K" /></h2>
-              <p className="opacity-50">Total Registered Businesses</p>
+              <p className="opacity-50">Businesses growing with Spendy</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
               <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="$250M" /></h2>
-              <p className="opacity-50">Total Revenue</p>
+              <p className="opacity-50">Revenue tracked</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 w-full">
               <h2 className="md:text-[64px] text-[48px] font-semibold"><SlotCounter value="90%" /></h2>
-              <p className="opacity-50">Revenue Growth</p>
+              <p className="opacity-50">Average growth reported</p>
           </div>
         </div>
+      </section>
+
+      <section className="py-[100px] bg-gray-100 dark:bg-[#121212]">
+        <div className="flex flex-col items-center justify-center gap-4 md:w-[55%] mx-auto w-full mb-8 px-6">
+          <h1 className="uppercase font-medium text-[14px] opacity-50">Features</h1>
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+            The essentials for building lasting financial momentum
+          </AnimateHeading>
+            <ScrollTextReveal repeat={true} tag="p" className="md:w-[55%] text-center font-medium opacity-75">
+            Thoughtful tools that turn everyday financial decisions into steady, measurable progress.
+          </ScrollTextReveal>
+        </div>
+
+        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
+          <div className="flex flex-col gap-4 md:w-[45%]">
+            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
+              Budgeting
+            </AnimateHeading>
+              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
+              Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.
+            </ScrollTextReveal>
+          </div>
+
+          <div className="bg-white dark:bg-[#202020] h-[400px] md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
+
+          </div>
+        </div>
+
+        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
+          <div className="bg-white dark:bg-[#202020] h-[400px] md:order-1 order-2 md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
+
+          </div>
+          <div className="flex flex-col gap-4 md:w-[45%] md:order-2 order-1">
+            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
+              Saving
+            </AnimateHeading>
+              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
+              Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.
+            </ScrollTextReveal>
+          </div>
+
+        </div>
+
+        <div className="md:px-[15%] px-6 flex md:flex-row flex-col justify-between gap-6 py-8">
+          <div className="flex flex-col gap-4 md:w-[45%]">
+            <AnimateHeading repeat={true} tag="h2" className="font-medium leading-[120%] tracking-[-2%] md:text-[28px] text-[20px]">
+              Investing
+            </AnimateHeading>
+              <ScrollTextReveal repeat={true} tag="p" className="font-medium opacity-75">
+              Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.
+            </ScrollTextReveal>
+          </div>
+
+          <div className="bg-white dark:bg-[#202020] h-[400px] md:w-[40%] w-auto aspect-3/4 md:rounded-[20px] rounded-[12px]">
+
+          </div>
+        </div>
+      
       </section>
 
       <section className="md:mx-[15%] mx-6 md:my-[100px] my-12 py-[47px] px-6 md:rounded-[20px] rounded-[10px] bg-gray-100 dark:bg-[#121212] flex flex-col gap-4 justify-center items-center text-center">
@@ -96,6 +154,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+
     </main>
   )
 }

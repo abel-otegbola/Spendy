@@ -9,21 +9,21 @@ export default function ResourcesSubMenu() {
                     [
                         {
                             id: 0,
-                            title: "Insights",
+                            title: "Financial insights",
                             icon: <BookOpenIcon strokeWidth={1} size={28} />,
-                            text: "Stay ahead with insights on engineering innovations, technologies, research, and industry trends."
+                            text: "Practical perspectives to help you understand your money, spot patterns, and make more informed decisions."
                         },
                         {
                             id: 1,
-                            title: "Opportunities",
+                            title: "Planning guides",
                             icon: <SearchCheckIcon strokeWidth={1} size={28} />,
-                            text: "Discover engineering competitions, internships, scholarships, events, and career opportunities."
+                            text: "Clear guidance for building a budget, reaching your goals, and creating a financial plan that lasts."
                         },
                         {
                             id: 2,
-                            title: "Network",
+                            title: "Spendy community",
                             icon: <NetworkIcon strokeWidth={1} size={28} />,
-                            text: "Connect with engineers, researchers, and industry professionals while sharing knowledge and ideas."
+                            text: "Learn alongside people who are building better habits, growing their wealth, and taking control of their future."
                         },
                     ].map(item => (
                         <div key={item.id} className="flex items-start gap-2 p-2 pb-3 hover:bg-muted/[0.5] cursor-pointer rounded-[10px]">
@@ -42,21 +42,21 @@ export default function ResourcesSubMenu() {
                     [
                         {
                             id: 0,
-                            title: "About us",
+                            title: "About Spendy",
                             icon: <InfoIcon strokeWidth={1} size={28} />,
-                            text: "Learn about Ennovate and our mission to make engineering knowledge more accessible."
+                            text: "Discover the thinking behind Spendy and our mission to make confident financial decisions feel simpler."
                         },
                         {
                             id: 1,
                             title: "Careers",
                             icon: <BriefcaseIcon strokeWidth={1} size={28} />,
-                            text: "Explore career opportunities and discover pathways to build a meaningful career in engineering."
+                            text: "Join a thoughtful team building better tools for how people manage, understand, and grow their money."
                         },
                         {
                             id: 2,
                             title: "Community",
                             icon: <UsersIcon strokeWidth={1} size={28} />,
-                            text: "Join a growing community of engineers, students, researchers, and professionals sharing ideas."
+                            text: "Connect with people sharing practical ideas, honest lessons, and progress on the road to financial clarity."
                         },
                     ].map(item => (
                         <div key={item.id} className="flex items-start gap-2 p-2 pb-3 hover:bg-muted/[0.5] cursor-pointer rounded-[10px]">
