@@ -16,9 +16,9 @@ export default function Footer() {
     ];
     
     return (
-        <footer className="md:pb-0 pb-[32px] bg-gradient-to-b from-[#121212] to-[#000] lg:px-[15%] md:px-[5%] px-6 py-16 text-white">
+        <footer className="md:pb-0 pb-[32px] bg-gray-100 dark:bg-[#121212] lg:px-[15%] md:px-[5%] px-6 py-16">
             <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-12 py-[40px]">
-            <div className="md:col-span-2 text-white flex flex-col gap-5">
+            <div className="md:col-span-2 flex flex-col gap-5">
                 <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
                     {/* <Image src="/Spendy.svg" width={26} height={26} alt="Spendy Logo" className="w-[26px] h-[26px] rounded" /> */}
                     <div className="flex flex-col gap-0">
@@ -28,7 +28,7 @@ export default function Footer() {
                 <div className="flex items-center gap-2">
                     {
                         socialLinks.map((link) => (
-                            <Link key={link.id} href={link.href} title={link.id} aria-label={link.id} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full border border-white/10">
+                            <Link key={link.id} href={link.href} title={link.id} aria-label={link.id} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border">
                                 <link.icon className="h-3 w-3" />
                             </Link>
                         ))

@@ -13,14 +13,14 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <p className="text-sm opacity-50">{text}</p>
+                    <p className="text-sm opacity-75">{text}</p>
                 </div>
                 
                 
                 <ul className="flex flex-col gap-2 pt-4">
                     {
                         list.map((item, i) => (
-                            <li key={i} className="flex items-center gap-2 text-[12px] font-semibold rounded-full px-3 py-1 bg-white dark:bg-[#202020] w-fit border border-gray-500/[0.2] opacity-50">
+                            <li key={i} className="flex items-center gap-2 text-[12px] font-semibold rounded-full px-3 py-1 bg-white dark:bg-[#202020] w-fit border border-gray-500/[0.2] opacity-75">
                                 <CheckCircle2 className="text-primary w-4 h-4" />
                                 {item}
                             </li>
@@ -28,7 +28,7 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
                     }
                 </ul>
             </div>
-            <div className="flex items-end bg-gradient-to-b from-[#101010] to-[#080808] text-white rounded-[10px] shadow-md flex-1 aspect-5/4">
+            <div className="flex bg-gradient-to-b from-[#121212] to-[#212121] text-white rounded-[10px] shadow-lg flex-1 aspect-5/4">
 
                 {/* <Image src={img} alt="feature" width={2000} height={2000} className="object-cover w-full aspect-5/3 h-auto duration-300" /> */}
                 {img}

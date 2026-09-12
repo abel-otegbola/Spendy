@@ -9,7 +9,8 @@ import FeaturesCard from "@/components/cards/featuresCard"
 import FAQs from "../components/sections/faqs"
 import PhoneIcon from "@/assets/icons/phone"
 import BankingIcon from "@/assets/icons/banking"
-import { BriefcaseIcon, CreditCardCheck, Wallet, Wallet2Icon } from "lucide-react"
+import { ArrowUpRight, Link2, Target, TrendingUp } from "lucide-react"
+import WalletIcon from "@/assets/icons/wallet"
 
 export default function Page() {
   return (
@@ -105,8 +106,8 @@ export default function Page() {
           <StopOnScroll>
             {
               [
-                { id: 0, heading: "Banking", text: "Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.", list: ["Send money", "Receive money", "Virtual cards", "Manage accounts"], img: <BankingIcon className="text-white dark:text-[#101010] w-[300px] h-auto mt-12 mx-auto" />, subheading: "Seamless Digital Banking" },
-                { id: 1, heading: "Saving", text: "Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.", list: ["Set goals", "Build habits", "Track progress", "Stay consistent"], img: "/features_img_2.webp", subheading: "Smart Saving Tools" },
+                { id: 0, heading: "Banking", text: "Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.", list: ["Send money", "Receive money", "Virtual cards", "Manage accounts"], img: <BankingIcon className="text-white dark:text-[#101010] w-[280px] h-auto mt-12 mx-auto" />, subheading: "Seamless Digital Banking" },
+                { id: 1, heading: "Saving", text: "Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.", list: ["Set goals", "Build habits", "Track progress", "Stay consistent"], img: <WalletIcon className="text-white dark:text-[#101010] w-[300px] h-auto mt-12 mx-auto" />, subheading: "Smart Saving Tools" },
                 { id: 2, heading: "Investing", text: "Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.", list: ["Research good investments", "Select the right ones", "Monitor performance", "Optimize your portfolio"], img: "/features_img_3.webp", subheading: "Intelligent Investments" },
                 { id: 3, heading: "Budgeting", text: "Take control of your finances with a clear plan. Track your spending, adjust your budget as needed, and optimize your financial habits for long-term success.", list: ["Plan your budget", "Track your spending", "Adjust your budget", "Optimize your spending"], img: "/features_img_4.webp", subheading: "Effective Budgeting" },
               ].map((item, index) => (
@@ -118,9 +119,61 @@ export default function Page() {
       
       </section>
 
+      <section className="py-[100px]">
+        <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
+          <h1 className="uppercase font-medium text-[14px] opacity-50">How it works</h1>
+          <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+            A simpler way to make every financial decision count
+          </AnimateHeading>
+          <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
+            Connect your financial life, create a plan, and let Spendy turn your progress into a habit you can see.
+          </ScrollTextReveal>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:w-[70%] md:w-[90%] mx-auto mt-12 border-t border-border">
+          {[
+            {
+              number: "01",
+              title: "Connect your accounts",
+              text: "Bring your financial picture together in one secure, organized view.",
+              icon: Link2,
+            },
+            {
+              number: "02",
+              title: "Set your priorities",
+              text: "Define the goals that matter most, from everyday spending to long-term growth.",
+              icon: Target,
+            },
+            {
+              number: "03",
+              title: "Build your plan",
+              text: "Create budgets and saving habits that fit your real life, not an idealized one.",
+              icon: ArrowUpRight,
+            },
+            {
+              number: "04",
+              title: "Watch your progress",
+              text: "Use clear insights to stay on track, adjust with confidence, and keep moving forward.",
+              icon: TrendingUp,
+            },
+          ].map(({ number, title, text, icon: Icon }) => (
+            <div key={number} className="flex min-h-[230px] flex-col justify-between gap-8 border-b border-border p-6 md:min-h-[270px] md:p-8 md:even:border-l">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-sm font-medium opacity-50">{number}</span>
+                <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold md:text-xl">{title}</h3>
+                <p className="max-w-[360px] text-sm leading-6 opacity-70">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <FAQs />
 
-      <section className="md:mx-[15%] mx-6 md:my-[100px] my-12 py-[47px] px-6 md:rounded-[20px] rounded-[10px] bg-gray-100 dark:bg-[#121212] flex flex-col gap-4 justify-center items-center text-center">
+      <section className="md:mx-[15%] mx-6 md:my-[100px] my-12 py-[47px] px-6 md:rounded-[20px] rounded-[10px] bg-gradient-to-b from-[#212121] to-[#101010] text-white flex flex-col gap-4 justify-center items-center text-center">
         <div className="md:p-[5%] lg:w-[45%] md:w-[70%] md:py-[5%] py-[10%] md:mx-auto flex flex-col justify-center md:items-center md:text-center gap-4 z-2 overflow-hidden">
           <AnimateHeading repeat={true} tag="h1" className="font-semibold 2xl:text-[32px] sm:text-[28px] text-[24px] leading-[130%]">
             Ready to manage and grow your finances
