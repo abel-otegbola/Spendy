@@ -11,7 +11,7 @@ export default function FAQs() {
         </AnimateHeading>
         </div>
 
-        <div className="flex flex-col gap-3 py-4 w-full">
+        <div className="flex flex-col gap-3 py-4 md:w-[75%] mx-auto w-full">
         {[
             {
             question: "What is Spendy?",
@@ -46,8 +46,8 @@ export default function FAQs() {
             answer: "Spendy is designed to make better financial management accessible. Choose the plan that fits your needs, with pricing presented clearly before you get started.",
             },
         ].map((item) => (
-            <details key={item.question} className="group border-b border-black/[0.15]">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium md:text-[20px] text-[16px] [&::-webkit-details-marker]:hidden">
+            <details key={item.question} className="group border-b border-border">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium [&::-webkit-details-marker]:hidden">
                 {item.question}
                 <ChevronDownIcon className="shrink-0 text-[20px] transition-transform duration-300 group-open:rotate-180" />
             </summary>
