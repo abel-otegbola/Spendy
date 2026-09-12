@@ -14,7 +14,7 @@ export default function Topbar() {
     const [openSubMenu, setOpenSubMenu] = useState("")
 
     return (
-        <div className="flex items-center justify-between lg:px-[15%] md:px-[5%] px-[5%] backdrop-blur-sm py-2 sticky top-0 z-5">
+        <div className="flex items-center justify-between lg:px-[15%] md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/80 py-2 sticky top-0 z-5">
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
                 <div className="flex flex-col gap-0">

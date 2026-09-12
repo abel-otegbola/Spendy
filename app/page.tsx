@@ -13,6 +13,8 @@ import PhoneIcon from "@/assets/icons/phone"
 import BankingIcon from "@/assets/icons/banking"
 import { ArrowUpRight, Link2, Target, TrendingUp } from "lucide-react"
 import WalletIcon from "@/assets/icons/wallet"
+import InvestmentIcon from "@/assets/icons/investment"
+import BudgetIcon from "@/assets/icons/budget"
 
 export default function Page() {
   return (
@@ -78,7 +80,7 @@ export default function Page() {
 
       <section className="py-[100px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
-          <h1 className="uppercase font-medium text-[14px] opacity-50">Why Spendy</h1>
+          <h1 className="uppercase font-medium text-[14px] text-primary">Why Spendy</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             A <span className="opacity-50">clearer</span> view of your money <br />and a <span className="opacity-50">smarter</span> path forward
           </AnimateHeading>
@@ -102,7 +104,7 @@ export default function Page() {
 
       <section className="py-[100px] bg-gray-100/[0.8] dark:bg-[#121212]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full mb-8 px-6">
-          <h1 className="uppercase font-medium text-[14px] opacity-50">Features</h1>
+          <h1 className="uppercase font-medium text-[14px] text-primary">Features</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             The <span className="opacity-50">essentials</span> for building lasting financial <span className="opacity-50">momentum</span>
           </AnimateHeading>
@@ -116,9 +118,9 @@ export default function Page() {
             {
               [
                 { id: 0, heading: "Banking", text: "Set a plan that reflects your real life. Create flexible budgets, understand your habits, and stay ahead of every commitment without the guesswork.", list: ["Send money", "Receive money", "Virtual cards", "Manage accounts"], img: <BankingIcon className="text-white dark:text-[#101010] w-[280px] h-auto mt-12 mx-auto" />, subheading: "Seamless Digital Banking" },
-                { id: 1, heading: "Saving", text: "Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.", list: ["Set goals", "Build habits", "Track progress", "Stay consistent"], img: <WalletIcon className="text-white dark:text-[#101010] w-[300px] h-auto mt-12 mx-auto" />, subheading: "Smart Saving Tools" },
-                { id: 2, heading: "Investing", text: "Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.", list: ["Research good investments", "Select the right ones", "Monitor performance", "Optimize your portfolio"], img: "/features_img_3.webp", subheading: "Intelligent Investments" },
-                { id: 3, heading: "Budgeting", text: "Take control of your finances with a clear plan. Track your spending, adjust your budget as needed, and optimize your financial habits for long-term success.", list: ["Plan your budget", "Track your spending", "Adjust your budget", "Optimize your spending"], img: "/features_img_4.webp", subheading: "Effective Budgeting" },
+                { id: 1, heading: "Saving", text: "Make progress feel automatic. Set meaningful goals, build healthy saving habits, and watch small decisions become lasting security.", list: ["Set goals", "Build habits", "Track progress", "Stay consistent"], img: <WalletIcon className="text-white dark:text-[#101010] w-[320px] h-auto mt-12 mx-auto" />, subheading: "Smart Saving Tools" },
+                { id: 2, heading: "Investing", text: "Put your money to work with greater clarity. Follow your portfolio, understand your progress, and invest with a plan you can trust.", list: ["Research good investments", "Select the right ones", "Monitor performance", "Optimize your portfolio"], img: <InvestmentIcon className="text-white dark:text-[#101010] w-[320px] h-auto mt-12 mx-auto" />, subheading: "Intelligent Investments" },
+                { id: 3, heading: "Budgeting", text: "Take control of your finances with a clear plan. Track your spending, adjust your budget as needed, and optimize your financial habits for long-term success.", list: ["Plan your budget", "Track your spending", "Adjust your budget", "Optimize your spending"], img: <BudgetIcon className="text-white dark:text-[#101010] w-[340px] h-auto mt-12 mx-auto " />, subheading: "Effective Budgeting" },
               ].map((item, index) => (
                 <FeaturesCard key={item.id} index={index} heading={item.heading} list={item.list} text={item.text} img={item.img} subheading={item.subheading} />
               ))
@@ -130,7 +132,7 @@ export default function Page() {
 
       <section className="py-[100px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
-          <h1 className="uppercase font-medium text-[14px] opacity-50">How it works</h1>
+          <h1 className="uppercase font-medium text-[14px] text-primary">How it works</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             A simpler way to make every financial decision count
           </AnimateHeading>
@@ -168,7 +170,7 @@ export default function Page() {
           ].map(({ number, title, text, icon: Icon }) => (
             <div key={number} className="flex min-h-[230px] flex-col justify-between gap-8 border-b border-border p-6 md:min-h-[270px] md:p-8 md:even:border-l">
               <div className="flex items-start justify-between gap-4">
-                <span className="text-sm font-medium opacity-50">{number}</span>
+                <span className="text-sm font-medium text-primary">{number}</span>
                 <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-2">
