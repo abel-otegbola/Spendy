@@ -6,10 +6,12 @@ import SlotCounter from "@/components/animations/slot-counter"
 import Topbar from "@/components/sections/topbar"
 import StopOnScroll from "@/components/animations/stop_on_scroll"
 import FeaturesCard from "@/components/cards/featuresCard"
+import BankingCard from "@/components/cards/bankingCard"
+import SavingBudgetCard from "@/components/cards/savingBudgetCard"
 import FAQs from "../components/sections/faqs"
 import PhoneIcon from "@/assets/icons/phone"
 import BankingIcon from "@/assets/icons/banking"
-import { ArrowUpRight, ChartNoAxesCombined, CreditCard, Link2, PiggyBank, Target, TrendingUp } from "lucide-react"
+import { ArrowUpRight, Link2, Target, TrendingUp } from "lucide-react"
 import WalletIcon from "@/assets/icons/wallet"
 
 export default function Page() {
@@ -39,49 +41,8 @@ export default function Page() {
             <PhoneIcon className="text-white dark:text-[#101010] sm:w-[300px] w-[240px] h-auto mx-auto" />
           </div>
 
-          <div className="order-2 flex w-full max-w-[330px] flex-col gap-4 backdrop-blur-sm rounded-2xl border border-black/[0.08] bg-white/80 p-5 text-left shadow-[0_18px_50px_rgba(0,0,0,0.08)] dark:border-border/[0.6] dark:bg-[#101010]/80 absolute sm:left-[-4%] left-[-15%] sm:top-[160px] top-[130px]  sm:scale-100 scale-60 sm:order-none sm:w-[260px] z-2">
-            <div className="flex items-start justify-between gap-3"> 
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] opacity-50">Saving & budgeting</p>
-                <h3 className="mt-1 text-lg font-semibold">Stay on course</h3>
-              </div>
-              <PiggyBank className="size-5 opacity-60" strokeWidth={1.5} />
-            </div>
-            <div>
-              <div className="mb-2 flex items-center justify-between text-xs opacity-60">
-                <span>Monthly goal</span>
-                <span>$840 / $1,000</span>
-              </div>
-              <div className="h-1 rounded-full bg-black/[0.08] dark:bg-white/[0.1]">
-                <div className="h-full w-[84%] rounded-full bg-green-400" />
-              </div>
-            </div>
-            <div className="flex items-center justify-between border-t border-black/[0.08] pt-3 text-xs dark:border-white/[0.1]">
-              <span className="opacity-60">Spending this month</span>
-              <span className="font-semibold">On track</span>
-            </div>
-          </div>
-
-          <div className="order-3 flex w-full max-w-[330px] flex-col gap-4 rounded-2xl border border-border/[0.5] bg-white dark:bg-[#101010] p-5 text-left shadow-[0_18px_50px_rgba(0,0,0,0.16)] absolute md:scale-100 scale-60 sm:right-0 -right-20 sm:top-[100px] top-[60px] sm:order-none sm:w-[260px] z-2">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] opacity-50">Banking</p>
-                <h3 className="mt-1 text-lg font-semibold">Money, in motion</h3>
-              </div>
-              <CreditCard className="size-5 opacity-70" strokeWidth={1.5} />
-            </div>
-            <div className="flex items-end justify-between">
-              <div>
-                <p className="text-xs opacity-50">Available balance</p>
-                <p className="mt-1 text-2xl font-semibold">$8,420.60</p>
-              </div>
-              <ChartNoAxesCombined className="size-8 opacity-60" strokeWidth={1.25} />
-            </div>
-            <div className="flex items-center justify-between border-t border-white/15 pt-3 text-xs">
-              <span className="opacity-50">Last transfer</span>
-              <span className="font-medium">Completed</span>
-            </div>
-          </div>
+          <SavingBudgetCard />
+          <BankingCard />
         </div>
         {/* <div className="relative mt-12 w-fit mx-auto">
           <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] rounded-[36px] shadow-[0px_5px_20px_#11111120]">
