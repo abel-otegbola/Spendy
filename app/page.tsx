@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import AnimateHeading from "../components/animations/animateHeading"
 import ScrollTextReveal from "../components/animations/scroll-text-reveal"
 import ScrollAnimate from "../components/animations/scrollAnimation"
@@ -11,40 +10,55 @@ import SavingBudgetCard from "@/components/cards/savingBudgetCard"
 import FAQs from "../components/sections/faqs"
 import PhoneIcon from "@/assets/icons/phone"
 import BankingIcon from "@/assets/icons/banking"
-import { ArrowUpRight, Link2, Target } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Link2, Target } from "lucide-react"
 import WalletIcon from "@/assets/icons/wallet"
 import InvestmentIcon from "@/assets/icons/investment"
 import BudgetIcon from "@/assets/icons/budget"
+import EurroIcon from "@/assets/clients/eurro"
+import FimmerIcon from "@/assets/clients/fimmer"
+import InfiniIcon from "@/assets/clients/infini"
+import OriginaIcon from "@/assets/clients/origina"
+import SitaraIcon from "@/assets/clients/sitara"
 
 export default function Page() {
   return (
     <main className="bg-[url('/bg.png')] bg-contain bg-top bg-no-repeat">
       <Topbar />
-      <header className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] lg:px-[25%] md:px-[15%] p-[5%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center sm:items-center sm:text-center gap-4">
-        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-semibold dark:font-medium 2xl:text-[64px] lg:text-[52px] sm:text-[40px] text-[40px] leading-[120%] tracking-[-2%]">
-          Efficiently Track and Manage Your <span className="opacity-50">Spending</span>
+      <header className="bg-gray-100 dark:bg-[#202020]/[0.25] 2xl:px-[22%] xl:px-[20%] lg:px-[17%] md:px-[13%] p-[5%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center sm:items-center sm:text-center gap-4">
+      
+        <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="font-medium w-fit uppercase px-4 py-1 text-[10px] bg-primary/[0.09] rounded-full">
+          Bank. Save. Invest. Grow
+        </ScrollTextReveal>
+        <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-medium dark:font-medium xl:text-[4em] lg:text-[3em] sm:text-[40px] text-[40px] leading-[120%] tracking-[-2%]">
+          Smart Finance <span className="opacity-50">Management</span> and <span className="opacity-50">Control</span>
         </AnimateHeading>
-        <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[60%] mx-auto font-medium opacity-75">
-          Track your spending, set budgets, and gain valuable insights into your financial habits.
+        <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[50%] mx-auto font-medium opacity-75">
+          Manage your money smarter, set budgets, and gain valuable insights for your financial growth.
         </ScrollTextReveal>
 
         <div className="flex sm:flex-row flex-col gap-4 sm:w-fit w-full">
           <ScrollAnimate className=" sm:w-fit w-full" delay={1} animation="slideUp">
-            <Button className="font-semibold sm:w-fit w-full">Get started for free</Button>
-          </ScrollAnimate>
-          <ScrollAnimate className=" sm:w-fit w-full" delay={1.2} animation="slideUp">
-            <Button variant="secondary" className="font-semibold sm:w-fit w-full">Watch demo</Button>
+            <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
+              <span className="">Get started </span>
+              <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
+            </button>
           </ScrollAnimate>
         </div>
 
-        <ScrollAnimate animation="zoomIn" start="top 80%" className="w-full">
+        
         <div className="relative mx-auto mt-12 flex w-full max-w-[900px] flex-col items-center gap-6 sm:min-h-[530px] sm:block ">
-          <div className="relative z-1 sm:absolute sm:left-1/2 sm:top-0 sm:-translate-x-1/2">
-            <PhoneIcon className="text-white dark:text-[#101010] sm:w-[300px] w-[240px] h-auto mx-auto" />
-          </div>
+          <ScrollAnimate animation="zoomIn" start="top 80%" className="w-full">
+            <div className="relative z-1 sm:absolute sm:left-1/2 sm:top-0 sm:-translate-x-1/2">
+              <PhoneIcon className="text-white dark:text-[#101010] sm:w-[300px] w-[240px] h-auto mx-auto" />
+            </div>
+          </ScrollAnimate>
 
-          <SavingBudgetCard />
-          <BankingCard />
+          <ScrollAnimate animation="slideLeft" start="top 50%" className="w-full">
+            <SavingBudgetCard />
+          </ScrollAnimate>
+          <ScrollAnimate animation="slideRight" start="top 40%" className="w-full">
+            <BankingCard />
+          </ScrollAnimate>
         </div>
         {/* <div className="relative mt-12 w-fit mx-auto">
           <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] rounded-[36px] shadow-[0px_5px_20px_#11111120]">
@@ -57,19 +71,26 @@ export default function Page() {
             <span className="bg-[#202020] dark:bg-[#121212] h-1 w-20 absolute bottom-5 rounded-full"></span>
           </div>
         </div> */}
-        </ScrollAnimate>
         {/* <PhoneMockup /> */}
       </header>
 
       {/* ========== MARQUEE ========== */}
-      <section className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] pt-12 pb-12">
-        <div className="overflow-hidden lg:w-[70%] md:w-[90%] mx-auto">
+      <section className="bg-gray-100 dark:bg-[#202020]/[0.25] pt-12 pb-12">
+        <div className="relative overflow-hidden lg:w-[70%] md:w-[90%] mx-auto py-2">
+              <span className="h-[60px] py-4 w-[20%] absolute top-0 left-0 bg-gradient-to-r from-gray-100 dark:from-[#101010] z-2"></span>
+              <span className="h-[60px] py-4 w-[20%] absolute top-0 right-0 bg-gradient-to-r to-gray-100 dark:to-[#101010] z-2"></span>
             <div className="marquee-track">
                 {[0, 1].map((rep) => (
                     <div key={rep} className="marquee-group flex items-center">
-                        {["Bank", "Invest", "Budget", "Pay bills"].map((item, i) => (
-                            <div key={`${rep}-${i}`} className="flex items-center gap-20 px-20">
-                                <span className="text-sm font-semibold whitespace-nowrap uppercase">{item}</span>
+                        {[
+                          { id: 0, icon: <EurroIcon className="h-[16px] w-auto" />}, 
+                          {id: 1, icon: <FimmerIcon className="h-[16px] w-auto" />}, 
+                          {id: 2, icon: <InfiniIcon className="h-[16px] w-auto" />}, 
+                          {id: 3, icon: <OriginaIcon className="h-[16px] w-auto" />}, 
+                          {id: 4, icon: <SitaraIcon className="h-[16px] w-auto" />}
+                        ].map((item, i) => (
+                            <div key={i} className="flex items-center gap-20 px-15 ">
+                                <span className="text-[10px] font-medium whitespace-nowrap uppercase">{item.icon}</span>
                             </div>
                         ))}
                     </div>
@@ -81,22 +102,22 @@ export default function Page() {
       <section className="py-[100px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] text-primary">Why Spendy</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             A <span className="opacity-50">clearer</span> view of your money <br />and a <span className="opacity-50">smarter</span> path forward
           </AnimateHeading>
         </div>
 
         <div className="grid sm:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto py-12">
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
-              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="120K" /></h2>
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-medium"><SlotCounter value="120K" /></h2>
               <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Businesses growing with Spendy</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
-              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="$250M" /></h2>
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-medium"><SlotCounter value="$250M" /></h2>
               <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Revenue tracked</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 w-full text-center">
-              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="90%" /></h2>
+              <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-medium"><SlotCounter value="90%" /></h2>
               <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Average growth reported</ScrollTextReveal>
           </div>
         </div>
@@ -105,15 +126,15 @@ export default function Page() {
       <section className="py-[100px] bg-gray-100/[0.8] dark:bg-[#121212]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full mb-8 px-6">
           <h1 className="uppercase font-medium text-[14px] text-primary">Features</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
-            <span className="opacity-50">The smarter way</span> to building<br/> lasting financial momentum
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+            <span className="opacity-50">The smarter way</span> to build<br/> lasting financial momentum
           </AnimateHeading>
             <ScrollTextReveal repeat={true} tag="p" className="lg:w-[50%] md:w-[80%] text-center opacity-75">
             Tools that turn everyday financial decisions into steady, measurable progress.
           </ScrollTextReveal>
         </div>
         
-        <div className="lg:px-[15%] md:px-[5%] px-4 py-12 md:h-[3890px] min-[500px]:h-[1720px] h-auto">
+        <div className="lg:px-[15%] md:px-[5%] px-4 py-12 md:h-[3990px] min-[500px]:h-[1720px] h-auto">
           <StopOnScroll>
             {
               [
@@ -133,7 +154,7 @@ export default function Page() {
       <section className="py-[100px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] text-primary">How it works</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+          <AnimateHeading repeat={true} tag="h2" className="font-medium md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
             <span className="opacity-50">Get Started With Spendy</span><br/> in Three Simple Steps
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
@@ -168,7 +189,7 @@ export default function Page() {
                 <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-2">
-                <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-semibold md:text-xl">{title}</ScrollTextReveal>
+                <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
                 <ScrollTextReveal repeat={true} tag="p" className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
               </div>
             </div>
@@ -180,13 +201,16 @@ export default function Page() {
 
       <section className="md:mx-[15%] mx-6 md:my-[100px] my-12 py-[47px] px-6 md:rounded-[20px] rounded-[10px] bg-gradient-to-b from-[#212121] to-[#101010] text-white flex flex-col gap-4 justify-center items-center text-center">
         <div className="md:p-[5%] lg:w-[45%] md:w-[70%] md:py-[5%] py-[10%] md:mx-auto flex flex-col justify-center md:items-center md:text-center gap-4 z-2 overflow-hidden">
-          <AnimateHeading repeat={true} tag="h1" className="font-semibold 2xl:text-[32px] sm:text-[28px] text-[24px] leading-[130%]">
+          <AnimateHeading repeat={true} tag="h1" className="font-medium 2xl:text-[32px] sm:text-[28px] text-[24px] leading-[130%]">
             Ready to manage and grow your finances
           </AnimateHeading>
 
           <div className="flex sm:flex-row flex-col gap-4 sm:w-fit w-full">
           <ScrollAnimate className=" sm:w-fit w-full" delay={1} animation="slideUp">
-            <Button className="font-medium sm:w-fit w-full">Get Started - It&apos;s free</Button>
+            <button className="px-8 py-2 pr-2 flex items-center gap-3 text-white bg-primary font-medium rounded-full sm:w-fit w-full shadow-lg">
+              Get started 
+              <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
+            </button>
           </ScrollAnimate>
           </div>
         </div>

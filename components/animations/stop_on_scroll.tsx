@@ -40,7 +40,7 @@ export default function StopOnScroll({
       if (features.length < 2) return
 
       gsap.set(features.slice(1), {
-        y: () => window.innerHeight * 4/5,
+        y: () => window.innerHeight,
       })
 
       // Tune these independently:

@@ -5,8 +5,9 @@ import ScrollTextReveal from "../animations/scroll-text-reveal";
 import Link from "next/link";
 import ScrollAnimate from "../animations/scrollAnimation";
 import AnimateHeading from "../animations/animateHeading";
-import { ChevronDownIcon } from "lucide-react";
+import { ArrowRight, ChevronDownIcon } from "lucide-react";
 import ResourcesSubMenu from "../subMenus/resourcesSubMenu";
+import LogoIcon from "@/assets/icons/logo";
 // import ThemeSelector from "../themeSelector/themeSelector";
 
 export default function Topbar() {
@@ -17,8 +18,11 @@ export default function Topbar() {
         <div className="flex items-center justify-between lg:px-[15%] md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/80 py-2 sticky top-0 z-5">
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
-                <div className="flex flex-col gap-0">
-                    <AnimateHeading tag={"h1"} repeat={open} className="tracking-[10%] font-bold text-[16px] uppercase">Spendy.</AnimateHeading>
+                <div className="flex gap-2 items-center">
+                    <ScrollAnimate animation="slideRight" repeat={false}>
+                        <LogoIcon className="text-border"/>
+                    </ScrollAnimate>
+                    <AnimateHeading tag={"h1"} repeat={open} className="tracking-[-3%] font-light text-[16px]">Spendy</AnimateHeading>
                 </div>
             </Link>
             <div className="items-center font-medium gap-4 text-[14px] md:flex hidden">
@@ -53,8 +57,11 @@ export default function Topbar() {
             </div>
             <div className="flex items-center gap-3">
                 {/* <ThemeSelector /> */}
-                <ScrollAnimate animation="slideLeft" end="top -500%" className="md:flex hidden">
-                    <Button variant="outline" size="sm" >Sign up</Button>
+                <ScrollAnimate animation="slideLeft" repeat={false} className="md:flex hidden">
+                    <button className="px-4 py-1 pr-1 flex items-center gap-2 rounded-full text-[12px] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50">
+                        Sign up
+                        <span className="rounded-full p-2 bg-border/[0.5]"><ArrowRight size={15} /></span>
+                    </button>
                 </ScrollAnimate>
             </div>
 
