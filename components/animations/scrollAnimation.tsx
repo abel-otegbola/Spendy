@@ -13,6 +13,7 @@ type AnimationType =
 
 type ScrollAnimateProps = {
   children: React.ReactNode
+  triggerRef?: React.RefObject<HTMLElement | null>
   animation?: AnimationType
   duration?: number
   delay?: number
@@ -25,6 +26,7 @@ type ScrollAnimateProps = {
 
 export default function ScrollAnimate({
   children,
+  triggerRef,
   animation = "fadeIn",
   duration = 1,
   delay = 0,
@@ -144,11 +146,11 @@ export default function ScrollAnimate({
         delay,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: wrapper,
+          trigger: triggerRef?.current ?? wrapper,
           start,
           end,
           once: !repeat,
-          toggleActions: "play reverse play reverse",
+          toggleActions: repeat ? "play reverse play reverse" : "play none none none",
         },
       })
 
@@ -164,6 +166,7 @@ export default function ScrollAnimate({
     }
   }, [
     animation,
+    triggerRef,
     duration,
     delay,
     start,

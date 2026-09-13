@@ -4,6 +4,7 @@ import { useEffect, useRef, type ReactNode } from "react"
 
 type AnimateHeadingProps = {
   children: ReactNode
+  triggerRef?: React.RefObject<HTMLElement | null>
   className?: string
   tag?: "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div"
   delay?: number
@@ -13,6 +14,7 @@ type AnimateHeadingProps = {
 
 export default function AnimateHeading({
   children,
+  triggerRef,
   className = "",
   tag: Tag = "p",
   delay = 0,
@@ -122,7 +124,7 @@ export default function AnimateHeading({
 
       const timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: container,
+          trigger: triggerRef?.current ?? container,
           start: "top 92%",
           once: !repeat,
           toggleActions: repeat ? "play none none reverse" : "play none none none",
@@ -175,7 +177,7 @@ export default function AnimateHeading({
       animation?.kill()
       container.innerHTML = originalHTML
     }
-  }, [children, delay, randomize, repeat])
+  }, [children, delay, randomize, repeat, triggerRef])
 
   return (
     <Tag

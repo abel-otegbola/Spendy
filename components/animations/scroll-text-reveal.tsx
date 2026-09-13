@@ -1,8 +1,9 @@
 'use client'
-import { useEffect, useRef, type ReactNode,  } from "react"
+import { useEffect, useRef, type ReactNode } from "react"
 
 type ScrollTextRevealProps = {
   children: ReactNode // Accepts strings, spans, or complex HTML elements
+  triggerRef?: React.RefObject<HTMLElement | null>
   className?: string
   tag?: "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div"
   delay?: number
@@ -11,6 +12,7 @@ type ScrollTextRevealProps = {
 
 export default function ScrollTextReveal({
   children,
+  triggerRef,
   className = "",
   tag: Tag = "p",
   delay = 0,
@@ -101,7 +103,7 @@ export default function ScrollTextReveal({
 
       animation = gsap.to(wordSpans, {
         scrollTrigger: {
-          trigger: container,
+          trigger: triggerRef?.current ?? container,
           start: "top 92%",
           once: !repeat,
           toggleActions: repeat ? "play none none reverse" : "play none none none",
@@ -120,7 +122,7 @@ export default function ScrollTextReveal({
       animation?.kill()
       container.innerHTML = originalHTML
     }
-  }, [children, delay, repeat])
+  }, [children, delay, repeat, triggerRef])
 
   return (
     <Tag ref={containerRef as React.RefObject<HTMLParagraphElement>} className={className}>

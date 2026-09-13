@@ -11,7 +11,7 @@ import SavingBudgetCard from "@/components/cards/savingBudgetCard"
 import FAQs from "../components/sections/faqs"
 import PhoneIcon from "@/assets/icons/phone"
 import BankingIcon from "@/assets/icons/banking"
-import { ArrowUpRight, Link2, Target, TrendingUp } from "lucide-react"
+import { ArrowUpRight, Link2, Target } from "lucide-react"
 import WalletIcon from "@/assets/icons/wallet"
 import InvestmentIcon from "@/assets/icons/investment"
 import BudgetIcon from "@/assets/icons/budget"
@@ -62,7 +62,7 @@ export default function Page() {
       </header>
 
       {/* ========== MARQUEE ========== */}
-      <section className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] pt-6 pb-12">
+      <section className="bg-gray-100/[0.25] dark:bg-[#202020]/[0.25] pt-12 pb-12">
         <div className="overflow-hidden lg:w-[70%] md:w-[90%] mx-auto">
             <div className="marquee-track">
                 {[0, 1].map((rep) => (
@@ -89,15 +89,15 @@ export default function Page() {
         <div className="grid sm:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto py-12">
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
               <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="120K" /></h2>
-              <p className="opacity-50">Businesses growing with Spendy</p>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Businesses growing with Spendy</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
               <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="$250M" /></h2>
-              <p className="opacity-50">Revenue tracked</p>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Revenue tracked</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 w-full text-center">
               <h2 className="lg:text-[64px] sm:text-[48px] text-[32px] font-semibold"><SlotCounter value="90%" /></h2>
-              <p className="opacity-50">Average growth reported</p>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Average growth reported</ScrollTextReveal>
           </div>
         </div>
       </section>
@@ -106,10 +106,10 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full mb-8 px-6">
           <h1 className="uppercase font-medium text-[14px] text-primary">Features</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[70%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
-            The <span className="opacity-50">essentials</span> for building lasting financial <span className="opacity-50">momentum</span>
+            <span className="opacity-50">The smarter way</span> to building<br/> lasting financial momentum
           </AnimateHeading>
-            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
-            Thoughtful tools that turn everyday financial decisions into steady, measurable progress.
+            <ScrollTextReveal repeat={true} tag="p" className="lg:w-[50%] md:w-[80%] text-center opacity-75">
+            Tools that turn everyday financial decisions into steady, measurable progress.
           </ScrollTextReveal>
         </div>
         
@@ -134,14 +134,14 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] text-primary">How it works</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
-            A simpler way to make every financial decision count
+            <span className="opacity-50">Get Started With Spendy</span><br/> in Three Simple Steps
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
-            Connect your financial life, create a plan, and let Spendy turn your progress into a habit you can see.
+            Join Spendy now and get started in minutes.
           </ScrollTextReveal>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:w-[70%] md:w-[90%] mx-auto mt-12 border-t border-border">
+        <div className="grid md:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto mt-12 border-t border-border">
           {[
             {
               number: "01",
@@ -161,21 +161,15 @@ export default function Page() {
               text: "Create budgets and saving habits that fit your real life, not an idealized one.",
               icon: ArrowUpRight,
             },
-            {
-              number: "04",
-              title: "Watch your progress",
-              text: "Use clear insights to stay on track, adjust with confidence, and keep moving forward.",
-              icon: TrendingUp,
-            },
           ].map(({ number, title, text, icon: Icon }) => (
-            <div key={number} className="flex min-h-[230px] flex-col justify-between gap-8 border-b border-border p-6 md:min-h-[270px] md:p-8 md:even:border-l">
+            <div key={number} className="flex min-h-[230px] flex-col justify-between gap-8 border-b border-border p-6 md:min-h-[270px] md:p-8 md:even:border-l md:last:border-l">
               <div className="flex items-start justify-between gap-4">
                 <span className="text-sm font-medium text-primary">{number}</span>
                 <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold md:text-xl">{title}</h3>
-                <p className="max-w-[360px] text-sm leading-6 opacity-70">{text}</p>
+                <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-semibold md:text-xl">{title}</ScrollTextReveal>
+                <ScrollTextReveal repeat={true} tag="p" className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
               </div>
             </div>
           ))}

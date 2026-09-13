@@ -3,11 +3,11 @@ import { ChevronDownIcon } from "lucide-react";
 
 export default function FAQs() {
     return (
-    <section className="flex flex-col items-center justify-center gap-12 lg:px-[15%] md:px-[5%] px-[5%] py-[10%] mt-[40px]">
+    <section className="flex flex-col items-center justify-center gap-12 lg:px-[15%] md:px-[5%] px-[5%] py-[5%] bg-gray-100 dark:bg-[#212121] mt-[40px]">
     <div className="flex flex-col items-center justify-center gap-4 w-full">
-        <h1 className="uppercase font-medium text-[14px] opacity-50">About Spendy</h1>
+        <h1 className="uppercase font-medium text-[14px] opacity-50">Frequently Asked Questions</h1>
         <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[50%] leading-[120%] text-center md:text-[28px] text-[24px]">
-        Everything you need to know before you take control of your finances
+        <span className="opacity-50">Somethings You Need to Know</span> Before You Get Started
         </AnimateHeading>
         </div>
 
@@ -46,10 +46,10 @@ export default function FAQs() {
             answer: "Spendy is designed to make better financial management accessible. Choose the plan that fits your needs, with pricing presented clearly before you get started.",
             },
         ].map((item) => (
-            <details key={item.question} className="group border-b border-border">
+            <details key={item.question} className="group bg-white dark:bg-[#101010] rounded-[12px] px-4">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium [&::-webkit-details-marker]:hidden">
                 {item.question}
-                <ChevronDownIcon className="shrink-0 text-[20px] transition-transform duration-300 group-open:rotate-180" />
+                <ChevronDownIcon className="shrink-0 text-[20px] transition-transform duration-500 group-open:rotate-180" />
             </summary>
             <p className="max-w-[75%] pb-5 text-sm leading-6 opacity-70 md:text-base">
                 {item.answer}
