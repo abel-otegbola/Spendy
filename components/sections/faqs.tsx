@@ -7,8 +7,8 @@ export default function FAQs() {
     <section className="flex flex-col items-center justify-center gap-12 lg:px-[15%] md:px-[5%] px-[5%] py-[5%] bg-gray-100 dark:bg-[#121212] mt-[40px]">
     <div className="flex flex-col items-center justify-center gap-4 w-full">
         <h1 className="uppercase font-medium text-[14px] opacity-50">Frequently Asked Questions</h1>
-        <AnimateHeading repeat={true} tag="h2" className="font-semibold md:w-[50%] leading-[120%] text-center md:text-[28px] text-[24px]">
-        <span className="opacity-50">Somethings You Need to Know</span> Before You Get Started
+        <AnimateHeading repeat={true} tag="h2" className="font-medium dark:font-normal md:w-[50%] leading-[120%] text-center md:text-[28px] text-[24px]">
+        <span className="opacity-50">Somethings You Need to Know</span><br /> Before You Get Started
         </AnimateHeading>
         </div>
 
@@ -53,7 +53,7 @@ export default function FAQs() {
                     {item.question}
                     <ChevronDownIcon className="shrink-0 text-[20px] transition-transform duration-500 group-open:rotate-180" />
                 </summary>
-                <p className="max-w-[75%] pb-5 text-sm leading-6 opacity-70 md:text-base">
+                <p className="pb-5 leading-6 opacity-70">
                     {item.answer}
                 </p>
                 </details>
