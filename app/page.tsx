@@ -32,7 +32,7 @@ export default function Page() {
             Bank. Save. Invest. Grow
           </ScrollTextReveal>
           <AnimateHeading repeat={true} tag="h1" delay={0.4} className="font-medium dark:font-medium xl:text-[4em] lg:text-[3em] sm:text-[3em] text-[40px] leading-[120%] tracking-[-2%]">
-            Smart Finance <span className="opacity-50">Management</span> for <span className="opacity-50">Growth</span>
+            Smarter Money <span className="opacity-50">Management</span> for <span className="opacity-50">Growth</span>
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[65%] mx-auto font-medium opacity-75">
             Manage your money smarter, set budgets, and gain valuable insights for your financial growth.
