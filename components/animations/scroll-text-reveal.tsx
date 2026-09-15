@@ -8,6 +8,7 @@ type ScrollTextRevealProps = {
   tag?: "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div"
   delay?: number
   repeat?: boolean
+  start?: string
 }
 
 export default function ScrollTextReveal({
@@ -17,6 +18,7 @@ export default function ScrollTextReveal({
   tag: Tag = "p",
   delay = 0,
   repeat = false,
+  start = "top 92%",
 }: ScrollTextRevealProps) {
   const containerRef = useRef<HTMLElement | null>(null)
 
@@ -104,7 +106,7 @@ export default function ScrollTextReveal({
       animation = gsap.to(wordSpans, {
         scrollTrigger: {
           trigger: triggerRef?.current ?? container,
-          start: "top 92%",
+          start,
           once: !repeat,
           toggleActions: repeat ? "play none none reverse" : "play none none none",
         },
@@ -122,7 +124,7 @@ export default function ScrollTextReveal({
       animation?.kill()
       container.innerHTML = originalHTML
     }
-  }, [children, delay, repeat, triggerRef])
+  }, [children, delay, repeat, triggerRef, start])
 
   return (
     <Tag ref={containerRef as React.RefObject<HTMLParagraphElement>} className={className}>

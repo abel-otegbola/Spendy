@@ -10,6 +10,7 @@ type AnimateHeadingProps = {
   delay?: number
   repeat?: boolean
   randomize?: boolean
+  start?: string
 }
 
 export default function AnimateHeading({
@@ -20,6 +21,7 @@ export default function AnimateHeading({
   delay = 0,
   repeat = false,
   randomize = false,
+  start = "top 92%",
 }: AnimateHeadingProps) {
   const containerRef = useRef<HTMLElement | null>(null)
 
@@ -125,7 +127,7 @@ export default function AnimateHeading({
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: triggerRef?.current ?? container,
-          start: "top 92%",
+          start,
           once: !repeat,
           toggleActions: repeat ? "play none none reverse" : "play none none none",
         },
@@ -177,7 +179,7 @@ export default function AnimateHeading({
       animation?.kill()
       container.innerHTML = originalHTML
     }
-  }, [children, delay, randomize, repeat, triggerRef])
+  }, [children, delay, randomize, repeat, triggerRef, start])
 
   return (
     <Tag
