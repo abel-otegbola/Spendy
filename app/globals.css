@@ -191,3 +191,12 @@
   filter: blur(10px);
   opacity: 0.4;
 }
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.child {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transition: scroll-margin 1s;
+}
