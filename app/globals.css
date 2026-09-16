@@ -192,11 +192,11 @@
   opacity: 0.4;
 }
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 .child {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
   transition: scroll-margin 1s;
 }

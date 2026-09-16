@@ -147,7 +147,7 @@ export default function Page() {
       </section>
 
       <section className="child py-[100px] bg-gray-100/[0.8] dark:bg-[#121212]">
-        <div className="flex flex-col gap-4 md:w-[90%] mx-auto w-full mb-8 md:px-0 px-6">
+        <div className="flex flex-col gap-4 md:w-[90%] mx-auto w-full mb-8 md:px-0 px-6 items-end text-right">
             <AnimateHeading repeat={true} tag="h2" className="md:w-[60%] leading-[120%] tracking-[-2%] md:text-[40px] sm:text-[32px] text-[28px]">
               Smart <span className="opacity-50">Financial tools</span> designed to help you <span className="opacity-50">manage your money</span> with confidence
             </AnimateHeading>

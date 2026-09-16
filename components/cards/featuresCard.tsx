@@ -36,7 +36,7 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
                     }
                 </ul>
             </div>
-            <div className={`flex pt-[6%] bg-gradient-to-b from-white to-gray-100 dark:from-[#121212] dark:to-[#212121] text-white rounded-[10px] flex-1 aspect-5/4 ${index%2 !== 0 ? "md:order-1 order-2" : index === 0 ? "items-end" :  ""}`}>
+            <div className={`flex pt-[6%] min-h-[370px] bg-gradient-to-b from-white to-gray-100 dark:from-[#121212] dark:to-[#212121] text-white rounded-[10px] flex-1 aspect-5/4 ${index%2 !== 0 ? "md:order-1 order-2" : index === 0 ? "items-end" :  ""}`}>
                 <ScrollAnimation triggerRef={cardRef} animation="zoomIn" repeat={false} start={`top ${-(index * 90) + 78}%`} className="">
                 {img}
                 </ScrollAnimation>
