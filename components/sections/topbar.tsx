@@ -22,10 +22,10 @@ export default function Topbar() {
                     <ScrollAnimate animation="slideRight" repeat={false}>
                         <LogoIcon className="text-border"/>
                     </ScrollAnimate>
-                    <AnimateHeading tag={"h1"} repeat={open} className="tracking-[-3%] font-medium text-[15px] uppercase">Spendy</AnimateHeading>
+                    <h1 className="tracking-[-3%] text-[20px] uppercase">Spendy</h1>
                 </div>
             </Link>
-            <div className="items-center font-medium gap-4 text-[14px] md:flex hidden">
+            <div className="items-center gap-4 text-[14px] md:flex hidden">
                 {
                     [
                         { id: 0, title: "Features", href: "#features" },

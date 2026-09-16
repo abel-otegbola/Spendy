@@ -4,7 +4,7 @@ import ScrollAnimate from "../animations/scrollAnimation";
 
 export default function FAQs() {
     return (
-    <section className="child flex flex-col items-center justify-center md:gap-12 gap-8 lg:px-[15%] md:px-[5%] px-[5%] py-[80px] bg-gray-100 dark:bg-[#121212]">
+    <section className="flex flex-col items-center justify-center md:gap-12 gap-8 lg:px-[15%] md:px-[5%] px-[5%] py-[80px] bg-gray-100 dark:bg-[#121212]">
     <div className="flex flex-col items-center justify-center gap-4 w-full">
         <AnimateHeading repeat={true} tag="h2" className="opacity-50 text-center md:w-[50%] leading-[120%] md:text-[28px] text-[24px]">
             Frequently Asked Questions

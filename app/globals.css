@@ -191,7 +191,7 @@
   filter: blur(10px);
   opacity: 0.4;
 }
-html {
+/* html {
   scroll-snap-type: y proximity;
 }
 
@@ -199,4 +199,4 @@ html {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
   transition: scroll-margin 1s;
-}
+} */
