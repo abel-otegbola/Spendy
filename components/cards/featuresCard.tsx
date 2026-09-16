@@ -14,19 +14,19 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
             <div className={`flex flex-col justify-between max-[500px]:w-full w-[46%] gap-6 max-[480px]:gap-3 md:px-8 px-4 py-8 ${index%2 !== 0 ? "md:order-2 order-1" : ""}`}>
                 <div className="flex flex-col gap-1">
                     {/* <span className="rounded bg-gray-500/[0.09] p-2 w-fit text-[16px] opacity-50">{icon}</span> */}
-                    <ScrollTextReveal triggerRef={cardRef} repeat={false} start={`top ${-(index * 120) + 78}%`} tag="h1" className="font-semibold text-sm opacity-50 uppercase">{heading}</ScrollTextReveal>
-                    <AnimateHeading triggerRef={cardRef}  start={`top ${-(index * 120) + 78}%`} className="font-medium 2xl:text-[28px] lg:text-[20px] md:w-[75%] text-[18px] tracking-[-0.2px] leading-[34px]">{subheading}</AnimateHeading>
+                    <ScrollTextReveal triggerRef={cardRef} repeat={false} start={`top ${-(index * 90) + 78}%`} tag="h1" className="font-semibold text-sm opacity-50 uppercase">{heading}</ScrollTextReveal>
+                    <AnimateHeading triggerRef={cardRef}  start={`top ${-(index * 90) + 78}%`} className="font-medium 2xl:text-[28px] lg:text-[20px] md:w-[75%] text-[18px] tracking-[-0.2px] leading-[34px]">{subheading}</AnimateHeading>
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <ScrollTextReveal triggerRef={cardRef} repeat={false} start={`top ${-(index * 120) + 78}%`} tag="p" className="text-sm opacity-75">{text}</ScrollTextReveal>
+                    <ScrollTextReveal triggerRef={cardRef} repeat={false} start={`top ${-(index * 90) + 78}%`} tag="p" className="text-sm opacity-75">{text}</ScrollTextReveal>
                 </div>
                 
                 
                 <ul className="flex flex-col gap-2 pt-4">
                     {
                         list.map((item, i) => (
-                            <ScrollAnimation triggerRef={cardRef} animation="slideRight" delay={i * 0.1} repeat={false} start={`top ${-(index * 120) + 78}%`} key={i}>
+                            <ScrollAnimation triggerRef={cardRef} animation="slideRight" delay={i * 0.1} repeat={false} start={`top ${-(index * 90) + 78}%`} key={i}>
                                 <li className="flex items-center gap-1 text-[12px] font-medium rounded-full pl-[6px] px-3 py-1 bg-white dark:bg-[#202020] w-fit border border-gray-500/[0.2] opacity-75">
                                     <CheckCircle2 className="text-primary w-4 h-4" />
                                     {item}
@@ -37,7 +37,7 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
                 </ul>
             </div>
             <div className={`flex pt-[6%] bg-gradient-to-b from-white to-gray-100 dark:from-[#121212] dark:to-[#212121] text-white rounded-[10px] flex-1 aspect-5/4 ${index%2 !== 0 ? "md:order-1 order-2" : index === 0 ? "items-end" :  ""}`}>
-                <ScrollAnimation triggerRef={cardRef} animation="zoomIn" repeat={false} start={`top ${-(index * 120) + 78}%`} className="">
+                <ScrollAnimation triggerRef={cardRef} animation="zoomIn" repeat={false} start={`top ${-(index * 90) + 78}%`} className="">
                 {img}
                 </ScrollAnimation>
             </div>

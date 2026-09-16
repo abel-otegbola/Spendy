@@ -177,11 +177,11 @@ const ConnectAccount = (props: SVGProps<SVGSVGElement>) => (
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1052_464" result="shape"/>
 </filter>
 <linearGradient id="paint0_linear_1052_464" x1="247" y1="195" x2="247" y2="210" gradientUnits="userSpaceOnUse">
-<stop stop-color="currentColor" stopOpacity="0.5"/>
+<stop stopColor="currentColor" stopOpacity="0.5"/>
 <stop offset="1" stopOpacity="0.5"/>
 </linearGradient>
 <linearGradient id="paint1_linear_1052_464" x1="551.09" y1="255" x2="551.09" y2="270" gradientUnits="userSpaceOnUse">
-<stop stop-color="currentColor" stopOpacity="0.5"/>
+<stop stopColor="currentColor" stopOpacity="0.5"/>
 <stop offset="1" stopOpacity="0.5"/>
 </linearGradient>
 <clipPath id="clip0_1052_464">
