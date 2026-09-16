@@ -11,7 +11,7 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
 
     return (
         <div ref={cardRef} className={`bg-gray-100 dark:bg-[#101010] rounded-[28px] w-full p-2 border-8 border-white dark:border-gray-500/[0.1] flex max-[500px]:flex-col flex-row md:gap-8 gap-8 overflow-y-auto`} style={{ zIndex: index+2, top: (index * 12) + "px"}}>
-            <div className={`flex flex-col justify-between max-[500px]:w-full w-[47%] gap-6 max-[480px]:gap-3 md:px-8 px-4 py-8 ${index%2 !== 0 ? "md:order-2 order-1" : ""}`}>
+            <div className={`flex flex-col justify-between max-[500px]:w-full w-[46%] gap-6 max-[480px]:gap-3 md:px-8 px-4 py-8 ${index%2 !== 0 ? "md:order-2 order-1" : ""}`}>
                 <div className="flex flex-col gap-1">
                     {/* <span className="rounded bg-gray-500/[0.09] p-2 w-fit text-[16px] opacity-50">{icon}</span> */}
                     <ScrollTextReveal triggerRef={cardRef} repeat={false} start={`top ${-(index * 120) + 78}%`} tag="h1" className="font-semibold text-sm opacity-50 uppercase">{heading}</ScrollTextReveal>
@@ -36,7 +36,7 @@ export default function FeaturesCard({ index, heading, text, list, img, subheadi
                     }
                 </ul>
             </div>
-            <div className={`flex bg-gradient-to-b from-white to-gray-100 dark:from-[#121212] dark:to-[#212121] text-white rounded-[10px] shadow-lg flex-1 aspect-5/4 ${index%2 !== 0 ? "md:order-1 order-2" : index === 0 ? "items-end" :  "items-center"}`}>
+            <div className={`flex pt-[6%] bg-gradient-to-b from-white to-gray-100 dark:from-[#121212] dark:to-[#212121] text-white rounded-[10px] flex-1 aspect-5/4 ${index%2 !== 0 ? "md:order-1 order-2" : index === 0 ? "items-end" :  ""}`}>
                 <ScrollAnimation triggerRef={cardRef} animation="zoomIn" repeat={false} start={`top ${-(index * 120) + 78}%`} className="">
                 {img}
                 </ScrollAnimation>

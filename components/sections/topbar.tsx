@@ -8,27 +8,28 @@ import AnimateHeading from "../animations/animateHeading";
 import { ArrowRight, ChevronDownIcon } from "lucide-react";
 import ResourcesSubMenu from "../subMenus/resourcesSubMenu";
 import LogoIcon from "@/assets/icons/logo";
-// import ThemeSelector from "../themeSelector/themeSelector";
+import ThemeSelector from "../themeSelector/themeSelector";
 
 export default function Topbar() {
     const [open, setOpen] = useState(false)
     const [openSubMenu, setOpenSubMenu] = useState("")
 
     return (
-        <div className="flex items-center justify-between lg:px-[15%] md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/80 py-2 sticky top-0 z-5">
-            <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">
+        <div className="flex items-center justify-between md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/80 py-2 sticky top-0 z-5">
+            <Link href={"/"} className="flex items-center gap-2 md:min-w-[16%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-1 items-center">
                     <ScrollAnimate animation="slideRight" repeat={false}>
                         <LogoIcon className="text-border"/>
                     </ScrollAnimate>
-                    <AnimateHeading tag={"h1"} repeat={open} className="tracking-[-3%] font-light text-[16px]">Spendy</AnimateHeading>
+                    <AnimateHeading tag={"h1"} repeat={open} className="tracking-[-3%] font-medium text-[15px] uppercase">Spendy</AnimateHeading>
                 </div>
             </Link>
             <div className="items-center font-medium gap-4 text-[14px] md:flex hidden">
                 {
                     [
-                        { id: 1, title: "Features", href: "/features" },
+                        { id: 0, title: "Features", href: "#features" },
+                        { id: 1, title: "Products", href: "#products" },
                         { id: 2, title: "Resources", href: "#", subMenu: <ResourcesSubMenu /> },
                         { id: 3, title: "Contact", href: "/contact" },
                     ].map(link => (
@@ -56,7 +57,7 @@ export default function Topbar() {
                 }
             </div>
             <div className="flex items-center gap-3">
-                {/* <ThemeSelector /> */}
+                <ThemeSelector />
                 <ScrollAnimate animation="slideLeft" repeat={false} className="md:flex hidden">
                     <button className="px-4 py-1 pr-1 flex items-center gap-2 rounded-full text-[12px] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50">
                         Sign up
@@ -75,10 +76,10 @@ export default function Topbar() {
                 {
                     
                     [
-                        { id: 0, title: "Features", href: "/features" },
-                        { id: 1, title: "Resources", href: "/resources" },
-                        { id: 2, title: "About Us", href: "/about" },
-                        { id: 3, title: "FAQs", href: "/faqs" },
+                        { id: 0, title: "Features", href: "#features" },
+                        { id: 1, title: "Resources", href: "#resources" },
+                        { id: 2, title: "Products", href: "#products" },
+                        { id: 3, title: "FAQs", href: "#faqs" },
                         { id: 4, title: "Contact Us", href: "/contact" },
                     ].map(link => (
                             <Link

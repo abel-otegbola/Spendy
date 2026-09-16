@@ -20,10 +20,9 @@ export default function StopOnScroll({
     const wrapper = wrapperRef.current
     const inner = innerRef.current
     const mediaQuery = window.matchMedia("(min-width: 768px)")
-    const mediaQueryTooSmall = window.matchMedia("(max-width: 500px)")
 
     if (!wrapper || !inner) return
-    if (mediaQueryTooSmall.matches) return
+    // if (mediaQueryTooSmall.matches) return
 
     let cancelled = false
     let cleanup: (() => void) | undefined
@@ -54,7 +53,7 @@ export default function StopOnScroll({
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: wrapper,
-          start: mediaQuery.matches ? "top 15%" : "top 2%",
+          start: mediaQuery.matches ? "top 24%" : "top 12%",
           end: `+=${totalScroll}vh`,
           pin: true,
           scrub: 1,
@@ -93,7 +92,7 @@ export default function StopOnScroll({
     >
       <div
         ref={innerRef}
-        className={`relative w-full grid min-[500px]:[&>*]:absolute min-[500px]:[&>*]:absolute max-[500px]:gap-2 ${innerClassName}`}
+        className={`relative w-full grid [&>*]:absolute [&>*]:absolute max-[500px]:gap-2 ${innerClassName}`}
       >
         {children}
       </div>

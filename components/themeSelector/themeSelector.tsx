@@ -19,11 +19,11 @@ export default function ThemeSelector() {
                 aria-label="Select theme"
                 value={mounted ? theme : "system"}
                 onChange={(event) => setTheme(event.target.value)}
-                className="h-8 appearance-none rounded-md border border-border outline-none bg-background py-1 pl-7 pr-7 text-xs font-medium capitalize"
+                className="h-8 appearance-none rounded-full border border-border outline-none bg-background/[0.2] py-1 pl-7 pr-7 text-xs font-medium capitalize"
             >
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
+                <option value="system" className='bg-background'>System</option>
+                <option value="light" className='bg-background'>Light</option>
+                <option value="dark" className='bg-background'>Dark</option>
             </select>
             <ChevronDown size={12} className="absolute right-2 text-[10px] opacity-60" />
         </div>

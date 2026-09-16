@@ -2,7 +2,7 @@ import { PiggyBank } from "lucide-react"
 
 export default function SavingBudgetCard() {
   return (
-    <div className="order-2 flex w-full max-w-[330px] flex-col gap-4 backdrop-blur-lg rounded-2xl border border-black/[0.08] bg-white/90 p-5 text-left shadow-[0_15px_30px_rgba(0,0,0,0.2)] dark:border-border/[0.6] dark:bg-[#101010]/95 sm:order-none sm:w-[260px] z-2">
+    <div className="flex w-full max-w-[330px] flex-col gap-4 backdrop-blur-lg rounded-2xl border border-black/[0.08] bg-white/90 p-5 text-left shadow-[0_15px_30px_rgba(0,0,0,0.2)] dark:border-border/[0.6] dark:bg-[#101010]/95 sm:order-none sm:w-[260px] z-2">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-[11px] font-medium uppercase tracking-[0.12em] opacity-50">Saving & budgeting</p>

@@ -105,7 +105,7 @@ export default function ScrollTextOpacity({
         scrollTrigger: {
           trigger: element,
           start: "top 75%",
-          end: "bottom 60%",
+          end: "bottom 20%",
           scrub: true,
           once: !repeat,
         },
