@@ -79,10 +79,10 @@ export default function Page() {
       </section>
 
         <div className="flex md:flex-row flex-col gap-4 mt-2 w-full">
-          <div className="relative flex flex-wrap items-end justify-between p-6 md:w-[60%] w-full md:h-[420px] h-[300px] bg-primary dark:bg-border/[0.5] bg-[url('/bg-hero.png')] bg-center bg-cover rounded-[20px]">
+          <div className="relative flex flex-wrap items-end justify-between p-6 md:w-[60%] w-full md:h-[460px] h-[300px] bg-primary dark:bg-border/[0.5] bg-[url('/bg-hero.webp')] bg-center bg-cover rounded-[20px]">
             
             <SavingBudgetCard />
-            <Link href="https://spendylab.vercel.app" className="relative z-10 flex w-fit gap-[10px] items-center justify-center rounded-full border border-white/25 bg-[#101010]/90 px-3 py-3 pl-6 font-medium text-white backdrop-blur-md backdrop-saturate-150">
+            <Link href="https://spendylab.vercel.app" className="relative z-10 flex w-fit gap-[10px] items-center justify-center rounded-full border border-white/25 bg-[#101010] px-3 py-3 pl-6 font-medium text-white backdrop-blur-md backdrop-saturate-150">
                 Get the App
                 <span className="text-white">
                     <AppStoreIcon />
@@ -94,7 +94,7 @@ export default function Page() {
             </Link>
             
           </div>
-          <div className="relative md:w-[40%] w-full mx-auto flex w-full p-20 overflow-hidden justify-start gap-6 md:h-[420px] h-[360px] sm:block bg-gray-200 dark:bg-border/[0.5] rounded-[20px]">
+          <div className="relative md:w-[40%] w-full mx-auto flex w-full p-20 overflow-hidden justify-start gap-6 md:h-[460px] h-[360px] sm:block bg-gray-200 dark:bg-border/[0.5] rounded-[20px]">
             <ScrollAnimate animation="slideUp" start="top 80%" className="w-full">
               <div className="relative z-1 sm:absolute sm:left-1/2 sm:top-0 sm:-translate-x-1/2">
                 <PhoneIcon className="text-white dark:text-[#101010] w-[200px] h-auto mx-auto" />
@@ -161,7 +161,7 @@ export default function Page() {
             <AnimateHeading repeat={true} tag="h2" className="opacity-50 leading-[120%] tracking-[-2%] md:text-[28px] text-[24px]">
               Build lasting financial momentum
             </AnimateHeading>
-            <div className="flex items-end justify-start p-6 w-full h-[360px] rounded-[20px] bg-white dark:bg-[#212121] bg-[url('/girl.png')] bg-cover bg-right">
+            <div className="flex items-end justify-start p-6 w-full h-[360px] rounded-[20px] bg-white dark:bg-[#212121] bg-[url('/girl.webp')] bg-cover bg-right">
               <Graph className="text-white dark:text-[#101010] w-[180px] h-auto" />
             </div>
           </div>
