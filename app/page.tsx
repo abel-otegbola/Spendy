@@ -20,6 +20,9 @@ import InfiniIcon from "@/assets/clients/infini"
 import OriginaIcon from "@/assets/clients/origina"
 import SitaraIcon from "@/assets/clients/sitara"
 import ScrollTextOpacity from "@/components/animations/scroll-text-opacity"
+import CreateAccount from "../assets/icons/createAccount"
+import ConnectAccount from "@/assets/icons/connectAccount"
+import BuildPlans from "@/assets/icons/buildPlans"
 
 export default function Page() {
   return (
@@ -104,32 +107,32 @@ export default function Page() {
           </div>
       </section>
 
-      <section className="pt-[100px]">
-        <div className="flex flex-col items-center justify-center gap-4 lg:w-[70%] md:w-[90%] text-center mx-auto w-full">
-          <ScrollTextOpacity className="md:text-[3em] text-[32px]">Spendy helps you manage your money, set smarter budgets, and make confident decisions for lasting financial growth.</ScrollTextOpacity>
-        </div>
-      </section>
-      <section className="py-[100px]">
+      <section className="py-[60px]">
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] opacity-50">Why Spendy</h1>
-          <AnimateHeading repeat={true} tag="h2" className="font-medium dark:font-normal md:w-[60%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
-            A <span className="opacity-50">clearer</span> view and<br /> a <span className="opacity-50">smarter</span> path forward
+          <AnimateHeading repeat={true} tag="h2" className="font-medium dark:font-normal md:w-[50%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
+            <span className="opacity-50">Financial growth</span> through smart decisions
           </AnimateHeading>
         </div>
 
         <div className="grid sm:grid-cols-3 lg:w-[70%] md:w-[90%] mx-auto py-12">
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
-              <h2 className="xl:text-[64px] lg:text-[48px] md:text-[40px] text-[32px] font-medium"><SlotCounter value="120K" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Businesses growing with Spendy</ScrollTextReveal>
+              <h2 className="xl:text-[48px] lg:text-[40px] text-[32px] font-medium"><SlotCounter value="120K" /></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Growing Businesses</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full text-center">
-              <h2 className="xl:text-[64px] lg:text-[48px] md:text-[40px] text-[32px] font-medium"><SlotCounter value="$250M" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Revenue tracked</ScrollTextReveal>
+              <h2 className="xl:text-[48px] lg:text-[40px] text-[32px] font-medium"><SlotCounter value="$250M" /></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Revenue Tracked</ScrollTextReveal>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 py-8 w-full text-center">
-              <h2 className="xl:text-[64px] lg:text-[48px] md:text-[40px] text-[32px] font-medium"><SlotCounter value="90%" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Average growth reported</ScrollTextReveal>
+              <h2 className="xl:text-[48px] lg:text-[40px] text-[32px] font-medium"><SlotCounter value="90%" /></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-50">Average Growth</ScrollTextReveal>
           </div>
+        </div>
+      </section>
+      <section className="pb-[100px]">
+        <div className="flex flex-col items-center justify-center gap-4 lg:w-[70%] md:w-[90%] text-center mx-auto w-full">
+          <ScrollTextOpacity className="md:text-[3em] text-[32px] leading-[110%] font-medium">Spendy helps you manage your money, set smarter budgets, and make confident decisions for lasting financial growth.</ScrollTextOpacity>
         </div>
       </section>
 
@@ -144,7 +147,7 @@ export default function Page() {
           </ScrollTextReveal>
         </div>
         
-        <div className="lg:px-[15%] md:px-[5%] px-4 py-12 h-[3990px] max-[500px]:h-[1720px]">
+        <div className="lg:px-[15%] md:px-[5%] px-4 py-12 h-[3990px] max-[500px]:h-auto">
           <StopOnScroll>
             {
               [
@@ -165,7 +168,7 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center gap-4 lg:w-[55%] md:w-[90%] mx-auto w-full px-6">
           <h1 className="uppercase font-medium text-[14px] opacity-50">How it works</h1>
           <AnimateHeading repeat={true} tag="h2" className="font-medium  dark:font-normal md:w-[65%] leading-[120%] tracking-[-2%] text-center md:text-[28px] text-[24px]">
-            <span className="opacity-50">Get Started With Spendy</span><br/> in Three Simple Steps
+            <span className="opacity-50">Get started with Spendy</span><br/> in three simple steps
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" className="lg:w-[55%] md:w-[90%] text-center opacity-75">
             Join Spendy now and get started in minutes.
@@ -179,30 +182,40 @@ export default function Page() {
               title: "Create your account",
               text: "Setup your account in seconds by signing up.",
               icon: Link2,
+              img: <CreateAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
             },
             {
               number: "02",
               title: "Connect your accounts",
               text: "Bring your financial picture together in one secure, organized view.",
               icon: Target,
+              img: <ConnectAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
             },
             {
               number: "03",
               title: "Build your plan",
               text: "Create budgets and saving habits that fit your real life, not an idealized one.",
               icon: ArrowUpRight,
+              img: <BuildPlans  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
+
             },
-          ].map(({ number, title, text, icon: Icon }) => (
-            <div key={number} className="flex min-h-[230px] flex-col gap-8 rounded-[28px] bg-white dark:bg-[#101010] w-full p-6 border-gray-100 dark:border-gray-500/[0.1] md:min-h-[270px] md:last:col-span-2">
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-sm font-medium opacity-50 uppercase">step {number}</span>
-                <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
+          ].map(({ number, title, text, icon: Icon, img }) => (
+            <div key={number} className={`flex min-h-[230px] flex-col gap-8 rounded-[28px] bg-white dark:bg-[#101010] w-full p-6 border-gray-100 dark:border-gray-500/[0.1] md:min-h-[270px] md:last:col-span-2 md:last:flex-row`}>
+              <div className="flex flex-col">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-sm font-medium opacity-50 uppercase">step {number}</span>
+                  <Icon aria-hidden="true" className="size-5 opacity-60" strokeWidth={1.5} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
+                  <ScrollTextReveal repeat={true} tag="p" className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
-                <ScrollTextReveal repeat={true} tag="p" className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
+              <div className="min-h-[160px] flex items-end flex-1 rounded-lg bg-gradient-to-b to-gray-100 dark:to-[#202020]">
+                <ScrollAnimate animation="slideUp" className="">
+                  {img}
+                </ScrollAnimate>
               </div>
-              <div className="min-h-[160px] flex-1 rounded-lg bg-gradient-to-b to-gray-100 dark:to-[#202020]"></div>
             </div>
           ))}
         </div>

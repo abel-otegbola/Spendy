@@ -4,6 +4,7 @@ import InstagramIcon from "@/assets/icons/instagram";
 import TwitterIcon from "@/assets/icons/twitter";
 import LinkedinIcon from "@/assets/icons/linkedin";
 import AnimateHeading from '../animations/animateHeading';
+// import ThemeSelector from '../themeSelector/themeSelector';
 // import Image from 'next/image';
 
 export default function Footer() {
@@ -34,6 +35,7 @@ export default function Footer() {
                         ))
                     }
                 </div>
+                {/* <ThemeSelector /> */}
             </div>
 
             <div className="flex flex-col gap-5">

@@ -69,7 +69,7 @@ export default function ScrollTextOpacity({
           letter.textContent = character
           letter.style.display = "inline-block"
           letter.style.willChange = "opacity"
-          letter.style.opacity = "0.1"
+          letter.style.opacity = "0.2"
           letter.dataset.scrollTextRevealLetter = "true"
 
           word.appendChild(letter)
@@ -94,7 +94,7 @@ export default function ScrollTextOpacity({
 
       gsap.registerPlugin(ScrollTrigger)
 
-      gsap.set(letterSpans, { opacity: 0.5 })
+      gsap.set(letterSpans, { opacity: 0.2 })
 
       animation = gsap.to(letterSpans, {
         opacity: 1,
@@ -105,7 +105,7 @@ export default function ScrollTextOpacity({
         scrollTrigger: {
           trigger: element,
           start: "top 75%",
-          end: "bottom 40%",
+          end: "bottom 60%",
           scrub: true,
           once: !repeat,
         },
