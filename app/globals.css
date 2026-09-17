@@ -128,25 +128,6 @@
     }
 }
 
-/* Custom Scrollbar Styles */
-/* For Webkit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 3px;
-  height: 6px;
-  background: #ffffff00;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 4px;
-  padding: 2px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #46464600;
-  border-radius: 4px;
-  transition: background 0.2s ease;
-}
-
 
 /* Marquee animation */
 
@@ -191,7 +172,7 @@
   filter: blur(10px);
   opacity: 0.4;
 }
-html {
+/* html {
   scroll-snap-type: y proximity;
 }
 
@@ -199,4 +180,4 @@ html {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
   transition: scroll-margin 1s;
-}
+} */
