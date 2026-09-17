@@ -192,7 +192,7 @@ export default function Page() {
               title: "Create your account",
               text: "Setup your account in seconds by signing up.",
               icon: Link2,
-              img: <CreateAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
+              img: <CreateAccount  className="text-white dark:text-[#101010] w-[85%] h-auto mx-auto" />
             },
             {
               number: 2,
@@ -206,7 +206,7 @@ export default function Page() {
               title: "Build your plan",
               text: "Create budgets and saving habits fit for your growth.",
               icon: ArrowUpRight,
-              img: <BuildPlans  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
+              img: <BuildPlans  className="text-white dark:text-[#101010] w-[70%] h-auto mx-auto" />
 
             },
           ].map(({ number, title, text, img }) => (
