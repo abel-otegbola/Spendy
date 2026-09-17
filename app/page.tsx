@@ -155,7 +155,7 @@ export default function Page() {
               Build lasting <br/>financial momentum
             </AnimateHeading>
             
-            <ScrollTextReveal repeat={false}  tag="p" start="top 90%" className="opacity-25">
+            <ScrollTextReveal repeat={false}  tag="p" start="top 90%" className="opacity-50">
               Smart financial tools that turn everyday financial decisions into steady, measurable progress. Spendy is designed to help you manage your money with confidence
             </ScrollTextReveal>
             <div className="flex items-end justify-start p-6 w-full min-h-[300px] flex-1 rounded-[20px] border-8 border-gray-100 dark:border-[#232323] bg-white dark:bg-[#212121] bg-[url('/girl.webp')] bg-no-repeat bg-cover bg-right">
