@@ -38,7 +38,7 @@ export default function Page() {
             Bank. Save. Invest. Grow
           </ScrollTextReveal>
           <AnimateHeading repeat={true} tag="h1" delay={0.4} className="xl:text-[4em] lg:text-[3em] sm:text-[3em] text-[32px] leading-[120%] tracking-[-2%]">
-            Manage your money <br /> <span className="opacity-25"> efficiently</span> with Spendy 
+            Smarter Money <br /> <span className="opacity-25"> Management</span> for Growth
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[65%] mx-auto font-medium opacity-75">
             Manage your money smarter, set budgets, and gain valuable insights for your financial growth.
