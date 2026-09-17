@@ -98,10 +98,8 @@ export default function Page() {
             
           </div>
           <div className="relative md:w-[40%] w-full mx-auto flex w-full p-20 overflow-hidden justify-center gap-6 sm:h-[460px] h-[360px] md:rounded-[20px] rounded-[10px] sm:block bg-gray-200 dark:bg-border/[0.5]">
-            <ScrollAnimate animation="slideUp" start="top 80%" className="w-full">
-              <div className="relative z-1 sm:absolute sm:left-1/2 sm:top-0 sm:-translate-x-1/2">
+            <ScrollAnimate animation="slideUp" start="top 80%">
                 <PhoneIcon className="text-white dark:text-[#101010] w-[240px] h-auto mx-auto" />
-              </div>
             </ScrollAnimate>
 
             
