@@ -33,14 +33,14 @@ export default function Page() {
       <Topbar />
       <header className="bg-[#FBFBFB] dark:bg-[#202020]/[0.25] lg:px-[5%] p-4 md:pt-[10%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
       
-        <div className="flex flex-col justify-center items-center text-center gap-4 md:px-[17%] sm:px-[20%]">
+        <div className="flex flex-col justify-center items-center text-center gap-4 md:px-[18%] sm:px-[20%]">
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="font-bold w-fit uppercase px-4 py-1 text-[10px] bg-primary/[0.09] rounded-full">
             Bank. Save. Invest. Grow
           </ScrollTextReveal>
           <AnimateHeading repeat={true} tag="h1" delay={0.4} className="xl:text-[4em] lg:text-[3em] sm:text-[3em] text-[32px] leading-[120%] tracking-[-2%]">
-            Smarter Money <br /><span className="opacity-25">Management</span> for Growth
+            Manage your money <br /> <span className="opacity-25"> efficiently</span> with Spendy 
           </AnimateHeading>
-          <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[75%] mx-auto font-medium opacity-75">
+          <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[65%] mx-auto font-medium opacity-75">
             Manage your money smarter, set budgets, and gain valuable insights for your financial growth.
           </ScrollTextReveal>
 
