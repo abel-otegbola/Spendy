@@ -15,14 +15,14 @@ export default function Topbar() {
     const [openSubMenu, setOpenSubMenu] = useState("")
 
     return (
-        <div className="flex items-center justify-between md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/80 py-2 sticky top-0 z-5">
+        <div className="flex items-center justify-between md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/60 py-2 sticky top-0 z-10">
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[16%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
                 <div className="flex gap-1 items-center">
                     <ScrollAnimate animation="slideRight" repeat={false}>
                         <LogoIcon className="text-border"/>
                     </ScrollAnimate>
-                    <h1 className="tracking-[-3%] text-[20px] uppercase">Spendy</h1>
+                    <h1 className="tracking-[-3%] text-[17px] uppercase">Spendy</h1>
                 </div>
             </Link>
             <div className="items-center gap-4 text-[14px] md:flex hidden">

@@ -38,7 +38,7 @@ export default function SlotCounter({
           observer.disconnect()
         }
       },
-      { threshold: 0.35 },
+      { threshold: 0.65 },
     )
 
     observer.observe(counter)

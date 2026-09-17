@@ -33,12 +33,12 @@ export default function Page() {
       <Topbar />
       <header className="bg-[#FBFBFB] dark:bg-[#202020]/[0.25] lg:px-[5%] p-4 md:pt-[10%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
       
-        <div className="flex flex-col justify-center items-center text-center gap-4 2xl:px-[17%] lg:px-[25%] md:px-[30%] sm:px-[20%]">
+        <div className="flex flex-col justify-center items-center text-center gap-4 md:px-[17%] sm:px-[20%]">
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="font-bold w-fit uppercase px-4 py-1 text-[10px] bg-primary/[0.09] rounded-full">
             Bank. Save. Invest. Grow
           </ScrollTextReveal>
           <AnimateHeading repeat={true} tag="h1" delay={0.4} className="xl:text-[4em] lg:text-[3em] sm:text-[3em] text-[32px] leading-[120%] tracking-[-2%]">
-            Smarter Money <span className="opacity-25">Management</span> for Growth
+            Smarter Money <br /><span className="opacity-25">Management</span> for Growth
           </AnimateHeading>
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="mb-4 md:w-[75%] mx-auto font-medium opacity-75">
             Manage your money smarter, set budgets, and gain valuable insights for your financial growth.
@@ -53,7 +53,7 @@ export default function Page() {
         </div>
 
         {/* ========== MARQUEE ========== */}
-      <section className="pt-12 pb-12 md:w-[90%] mx-auto opacity-25 overflow-hidden w-full">
+      <section className="child pt-12 pb-12 md:w-[90%] mx-auto opacity-25 overflow-hidden w-full">
         <div className="relative overflow-hidden lg:w-[70%] md:w-[90%] mx-auto py-2">
               <span className="h-[60px] py-4 w-[20%] absolute top-0 left-0 bg-gradient-to-r from-[#FBFBFB] dark:from-[#121212] z-2"></span>
               <span className="h-[60px] py-4 w-[20%] absolute top-0 right-0 bg-gradient-to-r to-[#FBFBFB] dark:to-[#121212] z-2"></span>
@@ -78,26 +78,26 @@ export default function Page() {
       </section>
 
         <div className="flex sm:flex-row flex-col mt-2 w-full gap-4">
-          <div className="relative flex flex-wrap items-end justify-between p-6 md:w-[60%] w-full sm:h-[460px] h-[360px] bg-primary dark:bg-border/[0.5] bg-[url('/bg-hero.webp')] bg-center bg-cover">
+          <div className="relative flex items-end justify-center md:justify-between md:p-6 pb-6 md:w-[60%] w-full sm:h-[460px] h-[360px] md:rounded-[20px] rounded-[10px] bg-primary dark:bg-border/[0.5] bg-[url('/bg-hero.webp')] bg-center bg-cover">
             
-            <ScrollAnimate animation="slideUp" start="top 80%" className="">
-            <SavingBudgetCard />
+            <ScrollAnimate animation="slideUp" className="">
+              <SavingBudgetCard />
             </ScrollAnimate>
-            <ScrollAnimate animation="slideUp" start="top 80%" className="">
-            <Link href="https://spendylab.vercel.app" className="relative z-10 flex w-fit gap-[10px] items-center justify-center rounded-full border border-white/25 bg-[#101010] px-3 py-3 pl-6 font-medium text-white backdrop-blur-md backdrop-saturate-150">
-                Get the App
-                <span className="text-white">
-                    <AppStoreIcon />
-                </span>
-                <span className="w-[1px] h-[70%] bg-white"></span>
-                <span className="text-white">
-                    <GooglePlayIcon />
-                </span>
-            </Link>
+            <ScrollAnimate animation="slideUp" className="">
+              <Link href="https://spendylab.vercel.app" className="relative z-10 flex w-fit gap-[10px] items-center justify-center rounded-full border border-white/25 bg-[#101010] px-3 py-3 pl-6 font-medium text-white backdrop-blur-md backdrop-saturate-150">
+                  Get the App
+                  <span className="text-white">
+                      <AppStoreIcon />
+                  </span>
+                  <span className="w-[1px] h-[70%] bg-white"></span>
+                  <span className="text-white">
+                      <GooglePlayIcon />
+                  </span>
+              </Link>
             </ScrollAnimate>
             
           </div>
-          <div className="relative md:w-[40%] w-full mx-auto flex w-full p-20 overflow-hidden justify-start gap-6 sm:h-[460px] h-[360px] sm:block bg-gray-200 dark:bg-border/[0.5]">
+          <div className="relative md:w-[40%] w-full mx-auto flex w-full p-20 overflow-hidden justify-center gap-6 sm:h-[460px] h-[360px] md:rounded-[20px] rounded-[10px] sm:block bg-gray-200 dark:bg-border/[0.5]">
             <ScrollAnimate animation="slideUp" start="top 80%" className="w-full">
               <div className="relative z-1 sm:absolute sm:left-1/2 sm:top-0 sm:-translate-x-1/2">
                 <PhoneIcon className="text-white dark:text-[#101010] w-[240px] h-auto mx-auto" />
@@ -126,41 +126,41 @@ export default function Page() {
 
       
 
-      <section className="py-[60px]">
-        <div className="flex flex-col gap-4 lg:w-[90%] md:w-[90%] mx-auto w-full md:px-0 px-4">
+      <section className="py-[40px]">
+        <div className="flex flex-col gap-4 lg:w-[90%] md:w-[90%] mx-auto w-full md:px-0 px-4 py-[40px]">
           <div className="flex flex-col items-center justify-center gap-4 w-full">
             <ScrollTextOpacity className="lg:text-[3em] sm:text-[40px] text-[28px] leading-[110%]">Spendy helps you manage your money, set smarter budgets, and make confident decisions for lasting financial growth.</ScrollTextOpacity>
           </div>
         </div>
 
         <div className="grid sm:grid-cols-4 grid-cols-3 lg:w-[90%] md:w-[90%] mx-auto py-12  items-center justify-center">
-          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
-              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="120K" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px]">Growing Businesses</ScrollTextReveal>
+          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full p-5">
+              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="120K" delay={0.2} /></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px] text-center">Growing Businesses</ScrollTextReveal>
           </div>
-          <div className="sm:col-span-2 flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full">
-              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="$250M" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px]">Revenue Tracked</ScrollTextReveal>
+          <div className="sm:col-span-2 flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full p-5">
+              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="$250M"  delay={0.4}/></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px] text-center">Revenue Tracked</ScrollTextReveal>
           </div>
-          <div className="flex flex-col justify-center items-center gap-4 py-8 w-full">
-              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="90%" /></h2>
-              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px]">Average Growth</ScrollTextReveal>
+          <div className="flex flex-col justify-center items-center gap-4 py-8 w-full p-5">
+              <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="90%" delay={0.6} /></h2>
+              <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px] text-center">Average Growth</ScrollTextReveal>
           </div>
         </div>
       </section>
 
-      <section className="child py-[100px] bg-[#FBFBFB] dark:bg-[#121212]">
+      <section className="child py-[40px] bg-[#FBFBFB] dark:bg-[#121212]">
         
         <div className="flex md:flex-row flex-col items-end gap-4 md:px-[5%] px-4 py-12">
           <div className="sticky bottom-6 flex flex-col md:h-[80vh] justify-start gap-6 md:w-[30%] w-full md:pr-6">
-            <AnimateHeading repeat={true} tag="h2" className="leading-[120%] tracking-[-2%] md:text-[28px] text-[24px]">
-              Build lasting financial momentum
+            <AnimateHeading repeat={false} tag="h2" start="top 90%" className="w-[75%] leading-[120%] tracking-[-2%] md:text-[28px] text-[24px]">
+              Build lasting <br/>financial momentum
             </AnimateHeading>
             
-            <ScrollTextReveal repeat={true} tag="p" className="opacity-25">
+            <ScrollTextReveal repeat={false}  tag="p" start="top 90%" className="opacity-25">
               Smart financial tools that turn everyday financial decisions into steady, measurable progress. Spendy is designed to help you manage your money with confidence
             </ScrollTextReveal>
-            <div className="flex items-end justify-start p-6 w-full flex-1 rounded-[20px] border border-border/[0.4] bg-white dark:bg-[#212121] bg-[url('/girl.webp')] bg-no-repeat bg-cover bg-right">
+            <div className="flex items-end justify-start p-6 w-full min-h-[300px] flex-1 rounded-[20px] border-8 border-gray-100 dark:border-[#232323] bg-white dark:bg-[#212121] bg-[url('/girl.webp')] bg-no-repeat bg-cover bg-right">
               <Graph className="text-white dark:text-[#101010] w-[180px] h-auto" />
             </div>
           </div>
@@ -190,21 +190,21 @@ export default function Page() {
         <div className="grid md:grid-cols-3 gap-4 md:w-[90%] mx-auto mt-12 md:px-0 px-4">
           {[
             {
-              number: "01",
+              number: 1,
               title: "Create your account",
               text: "Setup your account in seconds by signing up.",
               icon: Link2,
               img: <CreateAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
             },
             {
-              number: "02",
+              number: 2,
               title: "Connect your accounts",
               text: "Setup your financial records with just one click.",
               icon: Target,
               img: <ConnectAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
             },
             {
-              number: "03",
+              number: 3,
               title: "Build your plan",
               text: "Create budgets and saving habits fit for your growth.",
               icon: ArrowUpRight,
@@ -213,18 +213,18 @@ export default function Page() {
             },
           ].map(({ number, title, text, img }) => (
             <div key={number} className={`flex min-h-[230px] flex-col gap-8 md:rounded-[20px] rounded-[10px] bg-gray-100/[0.5] dark:bg-[#101010] w-full p-6 border-gray-100 dark:border-gray-500/[0.1] md:min-h-[270px]`}>
-              <div className="min-h-[160px] flex items-end flex-1 rounded-lg bg-gradient-to-b from-white dark:from-[#202020]">
-                <ScrollAnimate animation="slideUp" className="">
+              <div className="min-h-[160px] flex items-end flex-1 rounded-lg min-h-[200px] bg-gradient-to-b from-white dark:from-[#202020]">
+                <ScrollAnimate animation="slideUp" delay={number * 0.2} className="">
                   {img}
                 </ScrollAnimate>
               </div>
               <div className="flex flex-col items-center justify-center text-center">
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-sm font-medium opacity-25 uppercase">step {number}</span>
+                  <span className="text-sm font-medium opacity-25 uppercase">step 0{number}</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <ScrollTextReveal repeat={true} tag="h3" className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
-                  <ScrollTextReveal repeat={true} tag="p" className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
+                  <ScrollTextReveal repeat={true} tag="h3" delay={number * 0.2} className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
+                  <ScrollTextReveal repeat={true} tag="p" delay={number * 0.2} className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
                 </div>
               </div>
             </div>
