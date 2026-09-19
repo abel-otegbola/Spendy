@@ -181,3 +181,14 @@ html {
   scroll-snap-stop: normal;
   transition: scroll-margin 1s;
 }
+.animate-spin-slow {
+  animation: 4s linear spin-slow infinite;
+}
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

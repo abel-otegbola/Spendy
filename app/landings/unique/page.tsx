@@ -17,67 +17,45 @@ import UniqueTopbar from "@/components/sections/topbars/uniqueTopbar"
 export default function Page() {
   return (
     <main className="">
-      <div className="bg-[url('/bg2.png')] bg-cover bg-top bg-no-repeat bg-fixed">
+      <div className="bg-[url('/bg2.png')] bg-cover bg-top bg-no-repeat bg-fixed pt-4">
       <UniqueTopbar />
       {/* <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
         <source src="/bg.mp4" type="video/mp4" />
       </video> */}
-      <header className="min-h-[600px] lg:px-[5%] p-4 md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center gap-4">
+      <header className="lg:px-[5%] px-4 md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center w-full">
       
-        <div className="flex flex-col justify-center items-center text-center gap-4 md:px-[18%] sm:px-[20%]">
+        <div className="flex flex-col items-center text-center gap-4 md:px-[18%] sm:px-[20%]">
           <div className="relative overflow-hidden w-fit h-fit">
-            <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent xl:text-[3em] lg:text-[3em] sm:text-[3em] text-[32px] leading-[120%] tracking-[-4%]">
+            <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/[0.4] xl:text-[3em] lg:text-[3em] sm:text-[3em] text-[48px] leading-[120%] tracking-[-4%]">
               Build at the <br /> Speed of Thought
             </h1>
           </div>
           <ScrollTextReveal repeat={true} tag="p" delay={0.6} className="relative overflow-hidden mb-4 md:w-[100%] mx-auto opacity-50">
-            <span>Uinque helps you build a no-code AI app in minutes</span>
+            <span>Unique helps you build a no-code AI app in minutes</span>
           </ScrollTextReveal>
 
-          <div className="w-full [perspective:1200px] overflow-hidden flex justify-center items-center">
-            <div className="mx-auto w-[90%] max-w-[760px] rotate-x-[-30deg] transform-gpu rounded-[12px] overflow-hidden border-4 border-white shadow-[18px_24px_45px_rgba(0,0,0,0.2)] dark:border-border">
-              <div className="aspect-3/1 h-[160px] border border-black/10 bg-gradient-to-tr via-green-500 from-sky-500 to-green-200 dark:to-green-800" />
-            </div>
-          </div>
-
-          <ScrollAnimate className="" start="top 100%" delay={1} animation="slideUp">
-            <button className="py-2 px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010] font-medium rounded-full w-fit shadow-lg">
+          <ScrollAnimate className="relative w-fit h-fit overflow-hidden p-[2px] rounded-full" start="top 100%" delay={1} animation="slideUp">
+            <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-[190px] h-[48px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
+            <button className="relative h-[48px] block px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010]/[0.4] backdrops-blur-sm font-medium rounded-full w-[190px] shadow-lg z-2">
               <span className="rounded-full p-[6px] bg-black dark:bg-white/[0.05] text-white "><ArrowUpRight size={15} /></span> 
               <span className="">Get started today</span>
             </button>
           </ScrollAnimate>
-        </div>
-
-        {/* ========== MARQUEE ========== */}
-      <section className="child pt-12 pb-12 md:w-[90%] mx-auto opacity-50 overflow-hidden w-full">
-        <div className="relative overflow-hidden lg:w-[70%] md:w-[90%] mx-auto py-2">
-              <span className="h-[60px] py-4 w-[30%] absolute top-0 left-0 bg-gradient-to-r from-background z-2"></span>
-              <span className="h-[60px] py-4 w-[30%] absolute top-0 right-0 bg-gradient-to-r to-background z-2"></span>
-            <div className="marquee-track">
-                {[0, 1].map((rep) => (
-                    <div key={rep} className="marquee-group flex items-center">
-                        {[
-                          { id: 0, icon: <EurroIcon className="h-[16px] w-auto" />}, 
-                          {id: 1, icon: <FimmerIcon className="h-[16px] w-auto" />}, 
-                          {id: 2, icon: <InfiniIcon className="h-[16px] w-auto" />}, 
-                          {id: 3, icon: <OriginaIcon className="h-[16px] w-auto" />}, 
-                          {id: 4, icon: <SitaraIcon className="h-[16px] w-auto" />}
-                        ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-20 px-15 ">
-                                <span className="text-[10px] font-medium whitespace-nowrap uppercase">{item.icon}</span>
-                            </div>
-                        ))}
-                    </div>
-                ))}
+            
+          <div className="w-full [perspective:1200px] flex justify-center items-center mt-6 translate-y-4">
+            <div className="mx-auto w-fit rotate-x-[-30deg] transform-gpu rounded-[12px] overflow-hidden border-4 border-white shadow-[18px_24px_45px_rgba(0,0,0,0.2)] dark:border-border">
+              <div className="aspect-3/1 sm:h-[160px] border border-black/10 bg-gradient-to-tr via-green-500 from-sky-500 to-green-200 dark:to-green-800" />
             </div>
           </div>
-      </section>
+
+        </div>
+      
       </header>
 
       </div>
 
       <section className="py-[40px] ">
-        <div className="child flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 lg:w-[90%] md:w-[90%] mx-auto w-full md:px-0 px-4 py-[40px]">
+        <div className="flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 lg:w-[90%] md:w-[90%] mx-auto w-full md:px-0 px-4 py-[40px]">
           <div className="flex flex-col justify-end gap-4 sm:w-[50%] w-full">
             <div className="flex items-center gap-1 p-2 px-4 rounded-full w-fit bg-black/[0.6] backdrop-blur-sm text-[10px] uppercase text-white">
                 How it works
