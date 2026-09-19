@@ -132,11 +132,11 @@ export default function Page() {
         </div>
 
         <div className="grid sm:grid-cols-4 grid-cols-3 lg:w-[90%] md:w-[90%] mx-auto py-12  items-center justify-center">
-          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full p-5">
+          <div className="flex flex-col justify-center items-center gap-4 py-8 border-r border-gray-500/[0.2] w-full p-5">
               <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="120K" delay={0.2} /></h2>
               <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px] text-center">Growing Businesses</ScrollTextReveal>
           </div>
-          <div className="sm:col-span-2 flex flex-col justify-center items-center gap-4 py-8 border-r border-border w-full p-5">
+          <div className="sm:col-span-2 flex flex-col justify-center items-center gap-4 py-8 border-r border-gray-500/[0.2] w-full p-5">
               <h2 className="xl:text-[56px] lg:text-[48px] sm:text-[32px] text-[24px]"><SlotCounter value="$250M"  delay={0.4}/></h2>
               <ScrollTextReveal repeat={true} tag="p" className="opacity-25 sm:text-[15px] text-[13px] text-center">Revenue Tracked</ScrollTextReveal>
           </div>
