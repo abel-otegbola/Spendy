@@ -9,7 +9,7 @@ import ConnectAccount from "@/assets/icons/connectAccount"
 import BuildPlans from "@/assets/icons/buildPlans"
 import UniqueTopbar from "@/components/sections/topbars/uniqueTopbar"
 import HeroImageScroll from "@/components/animations/hero-image-scroll"
-import Image from "next/image"
+import HeroImage from "@/assets/icons/hero"
 
 export default function Page() {
   return (
@@ -40,11 +40,11 @@ export default function Page() {
           </ScrollAnimate>
             
           {/* hero image */}
-          <HeroImageScroll className="w-full [perspective:1200px] flex justify-center items-end mt-6 sm:translate-y-4 translate-y-3">
-            <div className="mx-auto w-fit transform-gpu rounded-[12px] overflow-hidden p-[1px]">
-              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-green-300 w-full h-full z-1 blur-[8px] animate-spin-slow"></span>
-              <div className="flex flex-col gap-2 relative h-fit border border-black/10 bg-white dark:bg-[#101010] z-2 rounded-[12px]">
-                <Image src="/uniquehero.png" alt="Unique AI hero image" width={1988} height={974} className="w-full h-full object-cover rounded-[12px]" />
+          <HeroImageScroll className="w-full  [perspective:1200px] flex justify-center items-end mt-6 sm:translate-y-4 translate-y-3">
+            <div className="relative mx-auto w-fit rounded-[12px] overflow-hidden p-[2px]">
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-green-400 via-transparent to-transparent w-[120%] h-[120%] -translate-x-[10%] z-1 blur-[8px] animate-spin-fast"></span>
+              <div className="flex flex-col gap-2 relative h-fit border border-green-400/[0.2] bg-white dark:bg-[#101010] z-2 rounded-[12px] overflow-hidden">
+                <HeroImage className="w-[60vw] h-auto " />
               </div>
             </div>
           </HeroImageScroll>
@@ -55,7 +55,7 @@ export default function Page() {
 
       </div>
 
-      <section className="py-[40px] pt-[180px]">
+      <section className="py-[40px] pt-[280px]">
         <div className="relative my-4 md:w-[60%] w-full mx-auto flex flex-col border border-gray-400/[0.1] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-2 overflow-hidden justify-between rounded-full bg-[#FFF] dark:bg-[#181818]/[0.8] backdrop-blur-sm">
           <div className="flex items-center gap-2 justify-between w-full pl-2">
             <button className="flex items-center gap-1 p-[6px] rounded-full bg-gray-200/[0.05] hover:bg-gray-200/[0.3] focus:bg-primary focus:text-white">

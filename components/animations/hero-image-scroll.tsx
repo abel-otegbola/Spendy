@@ -36,7 +36,7 @@ export default function HeroImageScroll({
         return Math.max(
           window.innerWidth / bounds.width,
           window.innerHeight / bounds.height,
-        ) * 0.4
+        ) * 0.6
       }
 
       gsap.set(image, {
@@ -45,11 +45,14 @@ export default function HeroImageScroll({
         scale: 1,
         transformOrigin: "center center",
         transformPerspective: 1200,
+        transformStyle: "preserve-3d",
+        backfaceVisibility: "hidden",
+        force3D: false,
         willChange: "transform",
       })
 
       const tween = gsap.to(image, {
-        y: 200,
+        y: 260,
         rotateX: 0,
         scale: coverScale,
         ease: "none",
