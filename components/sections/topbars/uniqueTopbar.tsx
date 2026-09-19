@@ -7,6 +7,7 @@ import ScrollAnimate from "@/components/animations/scrollAnimation";
 import AnimateHeading from "@/components/animations/animateHeading";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import UniqueLogo from "@/assets/icons/unique";
 
 export default function UniqueTopbar() {
     const [open, setOpen] = useState(false)
@@ -16,11 +17,11 @@ export default function UniqueTopbar() {
         <div className="flex items-center justify-between md:px-[5%] px-[5%] py-2 sticky top-0 z-10">
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[8%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
-                <div className="flex gap-1 items-center">
-                    {/* <ScrollAnimate animation="slideRight" repeat={false}>
-                        <LogoIcon className="text-border"/>
-                    </ScrollAnimate> */}
-                    <h1 className="tracking-[-3%] text-lg font-semibold">Unique AI</h1>
+                <div className="flex gap-2 items-center">
+                    <ScrollAnimate animation="slideRight" repeat={false}>
+                        <UniqueLogo className="text-border w-6 h-6"/>
+                    </ScrollAnimate>
+                    <h1 className="tracking-[-3%] uppercase font-semibold">Unique AI</h1>
                 </div>
             </Link>
             <div className="items-center gap-4 text-[14px] md:flex hidden p-1 px-4 bg-border/[0.2] backdrop-blur-sm rounded-full border border-border">

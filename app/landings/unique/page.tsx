@@ -2,22 +2,19 @@ import AnimateHeading from "@/components/animations/animateHeading"
 import ScrollTextReveal from "@/components/animations/scroll-text-reveal"
 import ScrollAnimate from "@/components/animations/scrollAnimation"
 import FAQs from "@/components/sections/faqs"
-import { ArrowRight, ArrowUpRight, Link2, Target } from "lucide-react"
-import EurroIcon from "@/assets/clients/eurro"
-import FimmerIcon from "@/assets/clients/fimmer"
-import InfiniIcon from "@/assets/clients/infini"
-import OriginaIcon from "@/assets/clients/origina"
-import SitaraIcon from "@/assets/clients/sitara"
+import { ArrowRight, ArrowUpRight, Link2, Plus, Target } from "lucide-react"
 import ScrollTextOpacity from "@/components/animations/scroll-text-opacity"
 import CreateAccount from "@/assets/icons/createAccount"
 import ConnectAccount from "@/assets/icons/connectAccount"
 import BuildPlans from "@/assets/icons/buildPlans"
 import UniqueTopbar from "@/components/sections/topbars/uniqueTopbar"
+import HeroImageScroll from "@/components/animations/hero-image-scroll"
+import Image from "next/image"
 
 export default function Page() {
   return (
     <main className="">
-      <div className="bg-[url('/bg2.png')] bg-cover bg-top bg-no-repeat bg-fixed pt-4">
+      <div className="bg-[url('/bg2.png')] bg-cover bg-top bg-no-repeat bg-fixed pt-4 relative">
       <UniqueTopbar />
       {/* <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
         <source src="/bg.mp4" type="video/mp4" />
@@ -35,18 +32,22 @@ export default function Page() {
           </ScrollTextReveal>
 
           <ScrollAnimate className="relative w-fit h-fit overflow-hidden p-[2px] rounded-full" start="top 100%" delay={1} animation="slideUp">
-            <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-[190px] h-[48px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
-            <button className="relative h-[48px] block px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010]/[0.4] backdrops-blur-sm font-medium rounded-full w-[190px] shadow-lg z-2">
+            <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[48px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
+            <button className="relative h-[48px] block px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010]/[0.4] backdrops-blur-sm font-medium rounded-full shadow-lg z-2">
               <span className="rounded-full p-[6px] bg-black dark:bg-white/[0.05] text-white "><ArrowUpRight size={15} /></span> 
-              <span className="">Get started today</span>
+              <span className="">Get early access</span>
             </button>
           </ScrollAnimate>
             
-          <div className="w-full [perspective:1200px] flex justify-center items-center mt-6 translate-y-4">
-            <div className="mx-auto w-fit rotate-x-[-30deg] transform-gpu rounded-[12px] overflow-hidden border-4 border-white shadow-[18px_24px_45px_rgba(0,0,0,0.2)] dark:border-border">
-              <div className="aspect-3/1 sm:h-[160px] border border-black/10 bg-gradient-to-tr via-green-500 from-sky-500 to-green-200 dark:to-green-800" />
+          {/* hero image */}
+          <HeroImageScroll className="w-full [perspective:1200px] flex justify-center items-end mt-6 sm:translate-y-4 translate-y-3">
+            <div className="mx-auto w-fit transform-gpu rounded-[12px] overflow-hidden p-[1px]">
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-green-300 w-full h-full z-1 blur-[8px] animate-spin-slow"></span>
+              <div className="flex flex-col gap-2 relative h-fit border border-black/10 bg-white dark:bg-[#101010] z-2 rounded-[12px]">
+                <Image src="/uniquehero.png" alt="Unique AI hero image" width={1988} height={974} className="w-full h-full object-cover rounded-[12px]" />
+              </div>
             </div>
-          </div>
+          </HeroImageScroll>
 
         </div>
       
@@ -54,11 +55,32 @@ export default function Page() {
 
       </div>
 
-      <section className="py-[40px] ">
-        <div className="flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 lg:w-[90%] md:w-[90%] mx-auto w-full md:px-0 px-4 py-[40px]">
+      <section className="py-[40px] pt-[180px]">
+        <div className="relative my-4 md:w-[60%] w-full mx-auto flex flex-col border border-gray-400/[0.1] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-2 overflow-hidden justify-between rounded-full bg-[#FFF] dark:bg-[#181818]/[0.8] backdrop-blur-sm">
+          <div className="flex items-center gap-2 justify-between w-full pl-2">
+            <button className="flex items-center gap-1 p-[6px] rounded-full bg-gray-200/[0.05] hover:bg-gray-200/[0.3] focus:bg-primary focus:text-white">
+              <Plus size={16} />
+            </button>
+            <input
+              placeholder="Describe your app"
+              className="flex-1 h-full p-2 bg-transparent border-none focus:ring-0 focus:outline-none text-sm"
+            />
+            <div className="relative w-fit -fit overflow-hidden p-[2px] rounded-full">
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
+              <button className="relative h-[40px] block px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010]/[0.4] backdrops-blur-sm font-medium rounded-full w-fit shadow-lg z-2">
+                <span className="rounded-full p-[6px] bg-black dark:bg-white/[0.05] text-white "><ArrowUpRight size={15} /></span> 
+                <span className="text-sm">Generate app</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-[100px] bg-[#FBFBFB] dark:bg-[#121212] flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 w-full md:px-[5%] px-4 py-[40px]">
           <div className="flex flex-col justify-end gap-4 sm:w-[50%] w-full">
-            <div className="flex items-center gap-1 p-2 px-4 rounded-full w-fit bg-black/[0.6] backdrop-blur-sm text-[10px] uppercase text-white">
-                How it works
+            <div className="relative w-fit -fit overflow-hidden p-[2px] rounded-full">
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
+              <button className="relative h-[40px] block px-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010] backdrops-blur-sm font-medium rounded-full w-fit shadow-lg z-2">
+                <span className="text-sm">How it works</span>
+              </button>
             </div>
             <h2 className="lg:text-[3em] sm:text-[40px] text-[28px] leading-[110%] opacity-25">Plan Smarter, <br /> Grow Faster</h2>
           </div>
@@ -68,7 +90,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="child py-[40px] bg-[#FBFBFB] dark:bg-[#121212]">
+      <section className="child py-[40px]">
         
         <div className="flex md:flex-row flex-col items-end gap-4 md:px-[5%] px-4 py-12">
           <div className="sticky bottom-6 flex flex-col md:h-[80vh] justify-start gap-6 md:w-[30%] w-full md:pr-6">
