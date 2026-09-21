@@ -17,8 +17,11 @@ export default function HeroImageScroll({
   useEffect(() => {
     const wrapper = wrapperRef.current
     const image = imageRef.current
+    const mediaQuery = window.matchMedia("(max-width: 768px)")
 
     if (!wrapper || !image) return
+
+    if (mediaQuery.matches) return
 
     let cancelled = false
     let cleanup: (() => void) | undefined
@@ -36,7 +39,7 @@ export default function HeroImageScroll({
         return Math.max(
           window.innerWidth / bounds.width,
           window.innerHeight / bounds.height,
-        ) * 0.6
+        ) * 0.7
       }
 
       gsap.set(image, {
@@ -44,22 +47,18 @@ export default function HeroImageScroll({
         rotateX: -20,
         scale: 1,
         transformOrigin: "center center",
-        transformPerspective: 1200,
-        transformStyle: "preserve-3d",
-        backfaceVisibility: "hidden",
-        force3D: false,
         willChange: "transform",
       })
 
       const tween = gsap.to(image, {
-        y: 260,
+        y: 100,
         rotateX: 0,
         scale: coverScale,
         ease: "none",
         scrollTrigger: {
           trigger: wrapper,
           start: "top 70%",
-          end: "bottom 40%",
+          end: "bottom 60%",
           scrub: 1,
           invalidateOnRefresh: true,
         },
