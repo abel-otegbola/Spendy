@@ -10,6 +10,8 @@ import BuildPlans from "@/assets/icons/buildPlans"
 import UniqueTopbar from "@/components/sections/topbars/uniqueTopbar"
 import HeroImageScroll from "@/components/animations/hero-image-scroll"
 import HeroImage from "@/assets/icons/hero"
+import DescribeCard, { DescribeIcons } from "@/components/sections/landing/describe"
+import IterateCard, { IterateIcons } from "@/components/sections/landing/iterate"
 
 export default function Page() {
   return (
@@ -66,7 +68,7 @@ export default function Page() {
               className="flex-1 h-full p-2 bg-transparent border-none focus:ring-0 focus:outline-none text-sm"
             />
             <div className="relative w-fit -fit overflow-hidden p-[2px] rounded-full">
-              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-green-500 via-green-400 to-lime-500 w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
               <button className="relative h-[40px] block px-2 pr-4 flex items-center justify-between gap-2 border border-border bg-white/[0.4] dark:bg-[#101010]/[0.4] backdrops-blur-sm font-medium rounded-full w-fit shadow-lg z-2">
                 <span className="rounded-full p-[6px] bg-black dark:bg-white/[0.05] text-white "><ArrowUpRight size={15} /></span> 
                 <span className="text-sm">Generate app</span>
@@ -74,7 +76,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="mt-[100px] bg-[#FBFBFB] dark:bg-[#121212] bg-[url('/about-bg.png')] bg-cover bg-center flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 w-full md:px-[5%] px-4 py-[40px]">
+        {/* <div className="mt-[100px] bg-[#FBFBFB] dark:bg-[#121212] bg-[url('/about-bg.png')] bg-cover bg-center flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 w-full md:px-[5%] px-4 py-[40px]">
           <div className="flex flex-col justify-end gap-4 sm:w-[50%] w-full">
             <div className="relative w-fit -fit overflow-hidden p-[2px] rounded-full">
               <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
@@ -87,62 +89,67 @@ export default function Page() {
           <div className="flex flex-col items-center justify-center gap-4 sm:w-[50%] w-full">
             <ScrollTextOpacity className="lg:text-[32px] sm:text-[32px] text-[24px] leading-[120%]">Turn a simple description into a functional app with screens, workflows, and data shaped around your idea. Refine it with natural language until it works the way you want.</ScrollTextOpacity>
           </div>
-        </div>
+        </div> */}
       </section>
 
-      <section className="py-[40px]">
+      <section className="py-[40px] bg-[#FBFBFB] dark:bg-[#121212]">
         
-        <div className="flex flex-col items-end gap-4 md:px-[5%] px-4 py-12">
+        <div className="flex flex-col items-end gap-4 md:px-[5%] px-4 py-4">
           <div className="flex flex-col items-center gap-6 w-full md:pr-6">
             <AnimateHeading repeat={false} tag="p" start="top 90%" className="w-[75%] font-normal leading-[120%] tracking-[-2%] md:text-[28px] text-[24px] text-center">
-              Built for the way ideas move
+              Describe it. <br /> Build it. Ship it.
             </AnimateHeading>
           </div>
         </div>
 
         {/* features */}
 
-        <div className="grid md:grid-cols-2 gap-4 md:w-[90%] mx-auto mt-12 md:px-0 px-4">
+        <div className="md:w-[90%] space-y-4 mx-auto md:px-0 px-4">
           {[
             {
               eyebrow: "01 / Prompt",
-              title: "Start with a sentence",
-              text: "Describe your product in plain language and get a polished first version without starting from a blank screen.",
+              title: "Describe",
+              text: "Write your product in plain language and get a polished first version without starting from a blank screen.",
               span: "md:col-span-1",
-              img: <CreateAccount className="text-white dark:text-[#101010] w-[78%] h-auto mx-auto" />
-            },
-            {
-              eyebrow: "02 / Generate",
-              title: "Working by design",
-              text: "Generate connected screens, workflows, and data structures that are ready to explore and improve.",
-              span: "md:col-span-1",
-              img: <ConnectAccount className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
+              img: <DescribeCard />,
+              icon: <DescribeIcons />
             },
             {
               eyebrow: "03 / Refine",
-              title: "Iterate without limits",
+              title: "Iterate",
               text: "Ask for changes, test new directions, and shape every detail without rebuilding from scratch.",
               span: "md:col-span-1",
-              img: <BuildPlans className="text-white dark:text-[#101010] w-[78%] h-auto mx-auto" />
+              img: <IterateCard />,
+              icon: <IterateIcons />
             },
             {
-              eyebrow: "04 / Launch",
-              title: "Make it yours",
+              eyebrow: "04 / Deploy",
+              title: "Launch",
               text: "Turn a promising prototype into a focused product that feels right for your customers and your workflow.",
               span: "md:col-span-1",
-              img: <BuildPlans className="text-white dark:text-[#101010] w-[62%] h-auto mx-auto" />
+              img: <BuildPlans className="text-white dark:text-[#101010] w-[62%] h-auto mx-auto" />,
+              icon: <DescribeIcons />
             },
-          ].map(({ eyebrow, title, text, img, span }, index) => (
-            <div key={eyebrow} className={`flex min-h-[430px] flex-col gap-6 rounded-[12px] bg-gray-100/[0.5] dark:bg-[#101010] w-full p-4 ${span}`}>
-              <div className="flex min-h-[220px] items-center justify-center overflow-hidden rounded-[8px] bg-gradient-to-b from-white to-gray-100 dark:from-[#202020] dark:to-[#151515]">
-                <ScrollAnimate animation="zoomIn" delay={index * 0.15} className="w-full">
-                  {img}
-                </ScrollAnimate>
-              </div>
-              <div className="flex flex-col gap-2 px-2 pb-2">
-                <span className="text-[10px] font-medium uppercase tracking-[0.12em] opacity-50">{eyebrow}</span>
-                <ScrollTextReveal repeat={true} tag="h3" delay={index * 0.15} className="text-xl font-medium md:text-2xl">{title}</ScrollTextReveal>
-                <ScrollTextReveal repeat={true} tag="p" delay={index * 0.15} className="max-w-[520px] text-sm leading-6 opacity-60">{text}</ScrollTextReveal>
+          ].map(({ eyebrow, title, text, img, span, icon }, index) => (
+            <div key={eyebrow} className="child h-screen py-6 w-full">
+              <div className="relative p-[2px] overflow-hidden rounded-[14px] w-full h-full">
+                <span className="absolute top-0 left-0 bg-gradient-to-r from-transparent via-transparent to-green-500 opacity-50 w-[120%] h-[120%] -translate-x-[10%] z-1 blur-[8px] animate-spin-fast"></span>
+                <div className={`relative flex sm:flex-row flex-col h-full gap-6 rounded-[12px] bg-gray-100/[0.5] dark:bg-[#101010] bg-[url("/bg.svg")] bg-cover bg-center w-full md:p-6 p-4 z-2 ${span}`}>
+                  <div className="flex flex-col gap-6 px-2 pb-2 md:w-[50%]">
+                    <div className="flex gap-4 items-center text-[10px] font-medium uppercase tracking-[0.12em] w-fit bg-gradient-to-br from-bg-green-100/[0.5] to-white dark:from-green-700/[0.2] dark:to-[#101010] px-6 py-3 border border-green-500/[0.3] rounded-full">
+                      <span className="h-1 w-1 rounded-full bg-green-400"></span>
+                      <span className="opacity-50">{eyebrow}</span>
+                    </div>
+                    <AnimateHeading  repeat={true} tag="h3" delay={index * 0.15} className="md:text-[4em] text-xl leading-[100%]">{title}</AnimateHeading>
+                    <ScrollTextReveal repeat={true} tag="p" delay={index * 0.15} className="max-w-[520px] text-sm leading-6 opacity-60 md:w-[75%]">{text}</ScrollTextReveal>
+                    {icon}
+                  </div>
+                  <div className="flex md:w-[50%] items-center justify-center overflow-hidden rounded-[8px] bg-gradient-to-br from-white to-gray-100 dark:from-transparent dark:to-[#000]/[0.8] backdrop-blur-sm">
+                    <ScrollAnimate animation="zoomIn" delay={index * 0.15} className="w-full">
+                      {img}
+                    </ScrollAnimate>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
