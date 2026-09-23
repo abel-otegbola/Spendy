@@ -3,24 +3,18 @@ import ScrollTextReveal from "@/components/animations/scroll-text-reveal"
 import ScrollAnimate from "@/components/animations/scrollAnimation"
 import FAQs from "@/components/sections/faqs"
 import { ArrowRight, ArrowUpRight, Plus } from "lucide-react"
-import ScrollTextOpacity from "@/components/animations/scroll-text-opacity"
-import CreateAccount from "@/assets/icons/createAccount"
-import ConnectAccount from "@/assets/icons/connectAccount"
-import BuildPlans from "@/assets/icons/buildPlans"
 import UniqueTopbar from "@/components/sections/topbars/uniqueTopbar"
 import HeroImageScroll from "@/components/animations/hero-image-scroll"
 import HeroImage from "@/assets/icons/hero"
 import DescribeCard, { DescribeIcons } from "@/components/sections/landing/describe"
 import IterateCard, { IterateIcons } from "@/components/sections/landing/iterate"
+import LaunchCard, { LaunchIcons } from "@/components/sections/landing/launch"
 
 export default function Page() {
   return (
     <main className="">
       <div className="bg-[url('/bg2.png')] bg-cover bg-top bg-no-repeat bg-fixed pt-4 relative">
       <UniqueTopbar />
-      {/* <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-        <source src="/bg.mp4" type="video/mp4" />
-      </video> */}
       <header className="lg:px-[5%] md:pt-[6%] pt-[100px] md:mx-auto flex flex-col justify-center items-center text-center w-full">
       
         <div className="flex flex-col items-center text-center gap-4 md:px-[18%] sm:px-[20%] overflow-hidden w-full">
@@ -76,20 +70,6 @@ export default function Page() {
             </div>
           </div>
         </div>
-        {/* <div className="mt-[100px] bg-[#FBFBFB] dark:bg-[#121212] bg-[url('/about-bg.png')] bg-cover bg-center flex sm:flex-row flex-col min-h-[600px] justify-between gap-4 w-full md:px-[5%] px-4 py-[40px]">
-          <div className="flex flex-col justify-end gap-4 sm:w-[50%] w-full">
-            <div className="relative w-fit -fit overflow-hidden p-[2px] rounded-full">
-              <span className="absolute top-0 left-0 bg-gradient-to-r from-lime-300 via-green-400 to-transparent w-full h-[40px] z-1 blur-[8px] rounded-full animate-spin-slow"></span>
-              <button className="relative h-[40px] block px-4 flex items-center justify-between gap-2 border border-border bg-white dark:bg-[#101010] backdrops-blur-sm font-medium rounded-full w-fit shadow-lg z-2">
-                <span className="text-sm">From idea to app</span>
-              </button>
-            </div>
-            <h2 className="lg:text-[3em] sm:text-[40px] text-[28px] leading-[110%] bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/[0.4]">Describe it. <br /> Build it. Ship it.</h2>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4 sm:w-[50%] w-full">
-            <ScrollTextOpacity className="lg:text-[32px] sm:text-[32px] text-[24px] leading-[120%]">Turn a simple description into a functional app with screens, workflows, and data shaped around your idea. Refine it with natural language until it works the way you want.</ScrollTextOpacity>
-          </div>
-        </div> */}
       </section>
 
       <section className="py-[40px] bg-[#FBFBFB] dark:bg-[#121212]">
@@ -127,8 +107,8 @@ export default function Page() {
               title: "Launch",
               text: "Turn a promising prototype into a focused product that feels right for your customers and your workflow.",
               span: "md:col-span-1",
-              img: <BuildPlans className="text-white dark:text-[#101010] w-[62%] h-auto mx-auto" />,
-              icon: <DescribeIcons />
+              img: <LaunchCard />,
+              icon: <LaunchIcons />
             },
           ].map(({ eyebrow, title, text, img, span, icon }, index) => (
             <div key={eyebrow} className="child h-screen py-6 w-full">
@@ -155,24 +135,6 @@ export default function Page() {
           ))}
         </div>
       </section>
-
-      <FAQs />
-
-      <section className="child md:mx-[5%] mx-6 md:my-[100px] my-12 py-[47px] px-4 md:rounded-[20px] rounded-[10px] bg-gradient-to-b from-[#212121] to-[#101010] text-white flex flex-col gap-4 justify-center items-center text-center">
-        <div className="md:p-[5%] lg:w-[45%] md:w-[70%] md:py-[5%] py-[10%] md:mx-auto flex flex-col justify-center items-center text-center gap-8 z-2 overflow-hidden">
-          <AnimateHeading repeat={true} tag="h1" className="2xl:text-[32px] sm:text-[28px] text-[24px] leading-[130%]">
-            Ready to build your <br /> next big idea
-          </AnimateHeading>
-
-          <ScrollAnimate className="" delay={1} animation="slideUp">
-            <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
-              <span className="">Start building </span>
-              <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
-            </button>
-          </ScrollAnimate>
-        </div>
-      </section>
-
 
     </main>
   )

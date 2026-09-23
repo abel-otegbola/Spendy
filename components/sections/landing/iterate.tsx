@@ -1,15 +1,33 @@
 import Unique from "@/assets/icons/unique";
 import ScrollTextReveal from "@/components/animations/scroll-text-reveal";
 import ScrollAnimate from "@/components/animations/scrollAnimation";
-import { ArrowRight, Bell, Bot, PenTool } from "lucide-react";
+import { ArrowRight, Bot, MousePointer2, Palette, PenTool, Smartphone } from "lucide-react";
+
+const iterationCursors = [
+    { label: "Edit headline", position: "bottom-[32%] left-[38%]", color: "bg-lime-300 text-black", animation: "animate-cursor-one" },
+    { label: "Text size", position: "bottom-[18%] right-[38%]", color: "bg-white text-black", animation: "animate-cursor-two" },
+];
 
 export default function IterateCard() {
     return (
-        <div className="flex flex-col gap-4 w-[75%] mx-auto">
+        <div className="relative flex flex-col gap-4 w-[75%] mx-auto">
+            {iterationCursors.map(({ label, position, color, animation }) => (
+                        <div
+                            key={label}
+                            className={`pointer-events-none absolute z-10 flex items-center gap-1 ${position} ${animation}`}
+                        >
+                            <MousePointer2 className="h-5 w-5 fill-current drop-shadow-sm" strokeWidth={1.5} />
+                            <span className={`whitespace-nowrap rounded-full px-2 py-1 text-[8px] font-semibold tracking-[0.04em] shadow-lg ${color}`}>
+                                {label}
+                            </span>
+                        </div>
+                    ))}
             <div className="relative p-[6px] overflow-hidden w-[240px] mx-auto rounded-[24px] bg-[#101010]">
               <span className="absolute top-0 left-0 bg-gradient-to-r from-green-400 via-green-300 to-lime-500 w-[50%] h-[120%] translate-x-[10%] z-1 blur-[8px] animate-spin-slow"></span>
 
+                {/* phone */}
                 <div className="relative flex flex-col justify-end gap-2 w-full bg-white dark:bg-[#101010] bg-cover bg-center rounded-[20px] p-3 pb-6 aspect-2/4 z-2">
+                    
                     <div className="flex justify-between items-center">
                         <ScrollAnimate animation="slideRight" repeat={false}>
                             <Unique className="text-border w-6 h-6"/>
@@ -46,7 +64,7 @@ export function IterateIcons() {
                 <span className="absolute top-0 left-0 bg-gradient-to-r from-border to-green-500 w-[120%] h-[120%] -translate-x-[10%] z-1 blur-[8px] animate-spin-fast"></span>
 
                 <div className={`relative flex gap-4  bg-white dark:bg-[#121212] items-center justify-center text-[10px] font-medium tracking-[0.12em] w-fit p-4 border border-border rounded-[18px] z-2`}>
-                    <PenTool size={48} strokeWidth={0.5} />
+                    <Smartphone size={48} strokeWidth={0.5} />
                 </div>
             </div>
             <div className="flex flex-col gap-2 w-[40%]">
@@ -59,7 +77,7 @@ export function IterateIcons() {
                 <span className="absolute top-0 left-0 bg-gradient-to-r from-border to-green-500 w-[120%] h-[120%] -translate-x-[10%] z-1 blur-[8px] animate-spin-fast"></span>
 
                 <div className={`relative flex gap-4  bg-white dark:bg-[#121212] items-center justify-center text-[10px] font-medium tracking-[0.12em] w-fit p-4 border border-border rounded-[18px] z-2`}>
-                    <Bot size={48} strokeWidth={0.5} />
+                    <Palette size={48} strokeWidth={0.5} />
                 </div>
             </div>
 

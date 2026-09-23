@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Bitcoin, Bot, ChevronDown, HomeIcon, PenTool, Plus, Star, Wallet } from "lucide-react";
+import ScrollAnimate from "@/components/animations/scrollAnimation";
 
 const suggestions = [
     { id: 0, text: "Ecommerce app for my brand store", icon: <HomeIcon size={14} /> },
@@ -20,14 +21,17 @@ export default function DescribeCard() {
     const [inputValue, setInputValue] = useState("ecommerce app");
     const [isTyping, setIsTyping] = useState(false);
     const [isAutoTyping, setIsAutoTyping] = useState(false);
+    const isTypingRef = useRef(false);
 
     useEffect(() => {
-        if (isTyping) return;
+        if (isTyping || isTypingRef.current) return;
 
         let currentIndex = 0;
         let typingInterval: number | undefined;
 
         const typeNextValue = () => {
+            if (isTypingRef.current) return;
+
             currentIndex = (currentIndex + 1) % animatedValues.length;
             const nextValue = animatedValues[currentIndex];
             let characterIndex = 0;
@@ -35,6 +39,12 @@ export default function DescribeCard() {
             setIsAutoTyping(true);
             setInputValue("");
             typingInterval = window.setInterval(() => {
+                if (isTypingRef.current) {
+                    window.clearInterval(typingInterval);
+                    setIsAutoTyping(false);
+                    return;
+                }
+
                 characterIndex += 1;
                 setInputValue(nextValue.slice(0, characterIndex));
 
@@ -69,7 +79,13 @@ export default function DescribeCard() {
                 <div className="relative flex flex-col justify-between gap-2 w-full bg-white dark:bg-[#101010] bg-[url('/bg.svg')] bg-cover bg-center rounded-[18px] p-2 pb-2 h-[120px] z-2">
                     <input
                         value={inputValue}
+                        onFocus={() => {
+                            isTypingRef.current = true;
+                            setIsTyping(true);
+                            setIsAutoTyping(false);
+                        }}
                         onChange={(event) => {
+                            isTypingRef.current = true;
                             setIsTyping(true);
                             setIsAutoTyping(false);
                             setInputValue(event.target.value);
@@ -114,10 +130,10 @@ export default function DescribeCard() {
 
             <div className="flex max-h-[220px] gap-2 flex-col overflow-y-hidden pr-1">
                 {!isAutoTyping && inputValue.trim() && matchingSuggestions.map(item => (
-                    <div key={item.id} className="flex gap-2 items-center rounded-lg bg-border/[0.4] p-2 text-sm opacity-50">
+                    <ScrollAnimate animation="slideDown" key={item.id} innerClassName="flex gap-2 items-center rounded-lg bg-border/[0.4] p-2 text-sm opacity-50">
                         {item.icon}
                         <p>{item.text}</p>
-                    </div>
+                    </ScrollAnimate>
                 ))}
 
             </div>
