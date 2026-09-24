@@ -27,11 +27,10 @@ export default function DescribeCard() {
         if (isTyping || isTypingRef.current) return;
 
         let currentIndex = 0;
+        let rotationTimeout: number | undefined;
         let typingInterval: number | undefined;
 
         const typeNextValue = () => {
-            if (isTypingRef.current) return;
-
             currentIndex = (currentIndex + 1) % animatedValues.length;
             const nextValue = animatedValues[currentIndex];
             let characterIndex = 0;
@@ -53,12 +52,14 @@ export default function DescribeCard() {
                     setIsAutoTyping(false);
                 }
             }, 120);
+
+            rotationTimeout = window.setTimeout(typeNextValue, 2800);
         };
 
-        const rotationInterval = window.setInterval(typeNextValue, 2800);
+        rotationTimeout = window.setTimeout(typeNextValue, 2800);
 
         return () => {
-            window.clearInterval(rotationInterval);
+            if (rotationTimeout) window.clearTimeout(rotationTimeout);
             if (typingInterval) window.clearInterval(typingInterval);
         };
     }, [isTyping]);
@@ -83,6 +84,10 @@ export default function DescribeCard() {
                             isTypingRef.current = true;
                             setIsTyping(true);
                             setIsAutoTyping(false);
+                        }}
+                        onBlur={() => {
+                            isTypingRef.current = false;
+                            setIsTyping(false);
                         }}
                         onChange={(event) => {
                             isTypingRef.current = true;
