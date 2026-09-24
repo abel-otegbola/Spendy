@@ -95,7 +95,7 @@ export default function Page() {
               icon: <DescribeIcons />
             },
             {
-              eyebrow: "03 / Refine",
+              eyebrow: "02 / Refine",
               title: "Iterate",
               text: "Ask for changes, test new directions, and shape every detail without rebuilding from scratch.",
               span: "md:col-span-1",
@@ -103,7 +103,7 @@ export default function Page() {
               icon: <IterateIcons />
             },
             {
-              eyebrow: "04 / Deploy",
+              eyebrow: "03 / Deploy",
               title: "Launch",
               text: "Turn a promising prototype into a focused product that feels right for your customers and your workflow.",
               span: "md:col-span-1",
