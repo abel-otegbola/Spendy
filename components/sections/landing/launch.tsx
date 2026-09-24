@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Apple, Check, CloudUpload, Globe, Play, Rocket, Smartphone } from "lucide-react";
+import ScrollAnimate from "@/components/animations/scrollAnimation";
 
 const stores = [
     { name: "App Store", icon: <Apple size={14} />, status: "Ready" },
@@ -6,10 +10,37 @@ const stores = [
 ];
 
 export default function LaunchCard() {
+    const [progress, setProgress] = useState(0);
+    const isComplete = progress === 100;
+
+    useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let currentProgress = 0;
+
+        const advance = (nextProgress: number) => {
+            currentProgress = nextProgress;
+            setProgress(nextProgress);
+
+            if (nextProgress === 100) {
+                timeout = setTimeout(() => {
+                    advance(0);
+                }, 1800);
+                return;
+            }
+
+            timeout = setTimeout(() => {
+                advance(currentProgress + 1);
+            }, 35);
+        };
+
+        timeout = setTimeout(() => advance(1), 2000);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <div className="flex w-[75%] flex-col gap-4 mx-auto">
             <div className="relative p-[1px] overflow-hidden w-[360px] mx-auto rounded-[24px] bg-[#101010]">
-              <span className="absolute top-0 left-0 bg-gradient-to-r from-green-400 via-green-300 to-lime-500 w-[70%] translate-x-[10%] h-[130%] z-1 blur-[8px] animate-spin-slow"></span>
                 <div className="relative mx-auto w-full max-w-[360px] overflow-hidden rounded-[20px] border border-border/[0.6] bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.08)] dark:bg-[#101010] z-2">
                     <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-green-400/[0.12] blur-3xl" />
                     <div className="relative flex items-center justify-between border-b border-border/[0.6] pb-3">
@@ -27,24 +58,27 @@ export default function LaunchCard() {
                         </span>
                     </div>
 
-                    <div className="relative mt-4 overflow-hidden rounded-xl bg-white dark:bg-[#101010] bg-[url('/bg.svg')] bg-cover bg-center  p-4 text-white">
-                        <div className="absolute right-3 top-3 opacity-30">
-                            <CloudUpload className="animate-bounce" size={22} />
-                        </div>
-                        <p className="text-[9px] tracking-[0.16em] text-green-300/80">Deploying to production</p>
-                        <p className="mt-2 text-lg font-semibold tracking-tight">Your app is ready to ship.</p>
-                        <div className="mt-5 flex items-center justify-between text-[9px] opacity-60">
-                            <span>Uploading build</span>
-                            <span>78%</span>
-                        </div>
-                        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/[0.15]">
-                            <div className="h-full w-[78%] animate-pulse rounded-full bg-green-300" />
+                    <div className="relative p-[1px] overflow-hidden w-full rounded-xl bg-[#101010] mt-4">
+                        <span className="absolute top-0 left-0 bg-gradient-to-r from-green-400 via-green-300 to-lime-500 w-[140%] translate-x-[-20%] h-[100%] z-1 blur-[8px] animate-spin-slow"></span>
+                        <div className="relative overflow-hidden rounded-xl bg-white dark:bg-[#101010] bg-[url('/bg.svg')] bg-cover bg-center z-2 p-4 text-white">
+                            <div className="absolute right-3 top-3 opacity-30">
+                                <CloudUpload className="animate-bounce" size={22} />
+                            </div>
+                            <p className="text-[9px] tracking-[0.16em] text-green-300/80">Deploying to production</p>
+                            <p className="mt-2 text-lg font-semibold tracking-tight">Your app is ready to ship.</p>
+                            <div className="mt-5 flex items-center justify-between text-[9px] opacity-60">
+                                <span>Uploading build</span>
+                                <span>{progress}%</span>
+                            </div>
+                            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/[0.15]">
+                                <div className="h-full rounded-full bg-green-300 transition-[width] duration-75" style={{ width: `${progress}%` }} />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="mt-3 flex flex-col gap-2">
-                        {stores.map((store) => (
-                            <div key={store.name} className="flex items-center justify-between rounded-lg border border-border/[0.7] px-3 py-2">
+                    <div aria-hidden={!isComplete} className={`mt-3 flex flex-col gap-2 transition-opacity duration-500`}>
+                        {stores.map((store, index) => (
+                            <ScrollAnimate animation={"slideRight"} repeat={isComplete} delay={0.2 * (index)} key={store.name} innerClassName={`items-center justify-between rounded-lg border border-border/[0.7] px-3 py-2 ${isComplete ? "flex" : "hidden"}`}>
                                 <div className="flex items-center gap-2">
                                     <span className="flex h-7 w-7 items-center justify-center rounded-md bg-border/[0.35]">{store.icon}</span>
                                     <span className="text-[10px] font-medium">{store.name}</span>
@@ -52,14 +86,14 @@ export default function LaunchCard() {
                                 <span className="flex items-center gap-1 text-[9px] text-green-600 dark:text-green-300">
                                     <Check size={11} /> {store.status}
                                 </span>
-                            </div>
+                            </ScrollAnimate>
                         ))}
                     </div>
 
-                    <div className="mt-3 flex items-center gap-2 rounded-lg bg-green-300/[0.15] p-2 text-[9px] text-green-700 dark:text-green-200">
+                    <ScrollAnimate animation="slideDown" repeat={isComplete} aria-hidden={!isComplete} innerClassName={`mt-3 items-center gap-2 rounded-lg bg-green-300/[0.15] p-2 text-[9px] text-green-700 transition-opacity duration-500 dark:text-green-200 ${isComplete ? "flex" : "hidden"}`}>
                         <Globe size={13} />
                         <span>Review complete. Publishing worldwide.</span>
-                    </div>
+                    </ScrollAnimate>
                 </div>
             </div>
 
