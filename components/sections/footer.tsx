@@ -1,13 +1,14 @@
+'use client'
 import Link from 'next/link';
 import FacebookIcon from "@/assets/icons/facebook";
 import InstagramIcon from "@/assets/icons/instagram";
 import TwitterIcon from "@/assets/icons/twitter";
 import LinkedinIcon from "@/assets/icons/linkedin";
 import AnimateHeading from '../animations/animateHeading';
-// import ThemeSelector from '../themeSelector/themeSelector';
-// import Image from 'next/image';
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+    const pathname = usePathname()
     
     const socialLinks = [
         { id: 'facebook', href: 'https://facebook.com', icon: FacebookIcon },
@@ -15,9 +16,10 @@ export default function Footer() {
         { id: 'twitter', href: 'https://x.com', icon: TwitterIcon },
         { id: 'linkedin', href: 'https://linkedin.com', icon: LinkedinIcon },
     ];
-    
+    const removeFromPages = ["/auth", "/account"]
+
     return (
-        <footer className="child md:pb-0 pb-[32px] bg-gray-100 dark:bg-[#121212] lg:px-[5%] md:px-[5%] px-6 py-16">
+        <footer className={`child md:pb-0 pb-[32px] bg-gray-100 dark:bg-[#121212] lg:px-[5%] md:px-[5%] px-6 py-16  ${removeFromPages.filter(item => pathname.includes(item)).length > 0 ? "hidden": ""}`}>
             <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-12 py-[40px]">
             <div className="md:col-span-2 flex flex-col gap-5">
                 <Link href={"/"} className="flex items-center gap-2 md:min-w-[10%]">

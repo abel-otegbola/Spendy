@@ -1,21 +1,28 @@
 'use client'
 import { Button } from "../ui/button";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ScrollTextReveal from "../animations/scroll-text-reveal";
 import Link from "next/link";
 import ScrollAnimate from "../animations/scrollAnimation";
 import AnimateHeading from "../animations/animateHeading";
-import { ArrowRight, ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import ResourcesSubMenu from "../subMenus/resourcesSubMenu";
 import LogoIcon from "@/assets/icons/logo";
 import ThemeSelector from "../themeSelector/themeSelector";
+import { usePathname } from "next/navigation";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { AuthContext } from "../../context/authContext";
 
 export default function Topbar() {
     const [open, setOpen] = useState(false)
     const [openSubMenu, setOpenSubMenu] = useState("")
+    const pathname = usePathname()
+    const { user } = useContext(AuthContext)
+    
+    const removeFromPages = ["/auth", "/account"]
 
     return (
-        <div className="flex items-center justify-between md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/60 py-2 sticky top-0 z-10">
+        <div className={`items-center justify-between md:px-[5%] px-[5%] backdrop-blur-sm bg-white/80 dark:bg-[#212121]/60 py-2 sticky top-0 z-10 ${removeFromPages.filter(item => pathname.includes(item)).length > 0 ? "hidden": "flex"}`}>
             <Link href={"/"} className="flex items-center gap-2 md:min-w-[16%]">
                 {/* <img src="/logo.png" className="w-[40px] h-[36px]" /> */}
                 <div className="flex gap-1 items-center">
@@ -59,10 +66,22 @@ export default function Topbar() {
             <div className="flex items-center gap-3">
                 <ThemeSelector />
                 <ScrollAnimate animation="slideLeft" repeat={false} className="md:flex hidden">
-                    <button className="px-4 py-1 pr-1 flex items-center gap-2 rounded-full text-[12px] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50">
-                        Sign up
-                        <span className="rounded-full p-2 bg-border/[0.5]"><ArrowRight size={15} /></span>
-                    </button>
+                    {
+                        user ? (
+                            <Link href="/account">
+                                <Avatar>
+                                    <AvatarImage src={user?.photoUrl} />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </Link>
+                        ) : (
+                            <Link href="/auth/login">
+                                <button className="px-4 py-1 pr-1 flex items-center gap-2 rounded-full text-[12px] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50">
+                                    Sign up
+                                </button>
+                            </Link>
+                        )
+                    }
                 </ScrollAnimate>
             </div>
 
@@ -99,10 +118,14 @@ export default function Topbar() {
                     ))
                 }
                 <ScrollAnimate animation="slideUp" start="top 100%" repeat={false}>
-                    <Button variant="outline" className="w-full mt-6" size="sm" >Sign in</Button>  
+                    <Link href="/auth/login">
+                        <Button variant="outline" className="w-full mt-6" size="sm" >Sign in</Button>  
+                    </Link>
                 </ScrollAnimate>
                 <ScrollAnimate animation="slideUp" start="top 100%" repeat={false}>
-                    <Button className="w-full mt-6" size="sm" >Sign up</Button>  
+                    <Link href="/auth/signup">
+                        <Button className="w-full mt-6" size="sm" >Sign up</Button>  
+                    </Link>
                 </ScrollAnimate>
                 </div>
                 <div className="flex flex-col gap-2">

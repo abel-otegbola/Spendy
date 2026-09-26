@@ -45,10 +45,12 @@ export default function Page() {
           </ScrollTextReveal>
 
           <ScrollAnimate className="" delay={1} animation="slideUp">
-            <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
-              <span className="">Get started </span>
-              <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
-            </button>
+            <Link href="/auth/signup">
+              <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
+                <span className="">Get started </span>
+                <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
+              </button>
+            </Link>
           </ScrollAnimate>
         </div>
 
@@ -101,25 +103,8 @@ export default function Page() {
             <ScrollAnimate animation="slideUp" start="top 80%">
                 <PhoneIcon className="text-white dark:text-[#101010] w-[240px] h-auto mx-auto" />
             </ScrollAnimate>
-
-            
-            {/* <ScrollAnimate animation="slideRight" start="top 40%" className="">
-              <BankingCard />
-            </ScrollAnimate> */}
           </div>
         </div>
-        {/* <div className="relative mt-12 w-fit mx-auto">
-          <div className="flex justify-center bg-white dark:bg-[#202020] bg-cover bg-top w-[300px] h-[560px] border-3 border-gray-300 dark:border-[#181818] rounded-[36px] shadow-[0px_5px_20px_#11111120]">
-            <span className="bg-white dark:bg-[#242424] h-[99%] w-[98%] absolute rounded border-6 border-[#181818] dark:border-[#000] rounded-[34px]"></span>
-            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -left-[5px] rounded-l"></span>
-            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-36 -left-[5px] rounded-l"></span>
-            <span className="bg-gray-300 dark:bg-[#000] h-12 w-[6px] absolute top-20 -right-[5px] rounded-r"></span>
-            <span className="bg-[#202020] dark:bg-[#000] h-6 w-24 absolute top-4 rounded-full"></span>
-            <span className="bg-white dark:bg-[#202020] h-2 w-2 absolute -translate-x-9 top-6 rounded-full"></span>
-            <span className="bg-[#202020] dark:bg-[#121212] h-1 w-20 absolute bottom-5 rounded-full"></span>
-          </div>
-        </div> */}
-        {/* <PhoneMockup /> */}
       </header>
 
       
@@ -192,34 +177,31 @@ export default function Page() {
               title: "Create your account",
               text: "Setup your account in seconds by signing up.",
               icon: Link2,
-              img: <CreateAccount  className="text-white dark:text-[#101010] w-[85%] h-auto mx-auto" />
+              img: <CreateAccount  className="text-white dark:text-[#101010] w-[120%] h-auto mx-auto" />
             },
             {
               number: 2,
               title: "Connect your accounts",
               text: "Setup your financial records with just one click.",
               icon: Target,
-              img: <ConnectAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
+              img: <ConnectAccount  className="text-white dark:text-[#101010] scale-75 h-auto mx-auto" />
             },
             {
               number: 3,
               title: "Build your plan",
               text: "Create budgets and saving habits fit for your growth.",
               icon: ArrowUpRight,
-              img: <BuildPlans  className="text-white dark:text-[#101010] w-[70%] h-auto mx-auto" />
+              img: <BuildPlans  className="text-white dark:text-[#101010] w-[100%] h-auto mx-auto" />
 
             },
           ].map(({ number, title, text, img }) => (
             <div key={number} className={`flex min-h-[230px] flex-col gap-8 md:rounded-[20px] rounded-[10px] bg-gray-100/[0.5] dark:bg-[#101010] w-full p-6 border-gray-100 dark:border-gray-500/[0.1] md:min-h-[270px]`}>
-              <div className="min-h-[160px] flex items-end flex-1 rounded-lg min-h-[200px] bg-gradient-to-b from-white dark:from-[#202020]">
-                <ScrollAnimate animation="slideUp" delay={number * 0.2} className="">
+              <div className="min-h-[160px] flex items-end justify-center flex-1 rounded-lg min-h-[200px] bg-gradient-to-b from-white dark:from-[#202020] overflow-hidden aspect-4/3">
+                <ScrollAnimate animation="slideUp" delay={number * 0.2} innerClassName="flex justify-center w-full overflow-hidden">
                   {img}
                 </ScrollAnimate>
               </div>
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-sm font-medium opacity-25 uppercase">step 0{number}</span>
-                </div>
                 <div className="flex flex-col gap-2">
                   <ScrollTextReveal repeat={true} tag="h3" delay={number * 0.2} className="text-lg font-medium md:text-xl">{title}</ScrollTextReveal>
                   <ScrollTextReveal repeat={true} tag="p" delay={number * 0.2} className="max-w-[360px] text-sm leading-6 opacity-70">{text}</ScrollTextReveal>
@@ -239,10 +221,12 @@ export default function Page() {
           </AnimateHeading>
 
           <ScrollAnimate className="" delay={1} animation="slideUp">
-            <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
-              <span className="">Get started </span>
-              <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
-            </button>
+            <Link href="/auth/signup">
+              <button className="px-8 py-2 pr-2 flex items-center justify-between gap-3 text-white bg-primary font-medium rounded-full w-fit shadow-lg">
+                <span className="">Get started </span>
+                <span className="rounded-full p-2 bg-black/[0.5]"><ArrowRight size={15} /></span>
+              </button>
+            </Link>
           </ScrollAnimate>
         </div>
       </section>
