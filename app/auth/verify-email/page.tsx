@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react'
+'use client'
+import { useContext, useEffect } from 'react'
 import LogoIcon from '@/assets/icons/logo'
 import { AuthContext } from '@/context/authContext'
 import { useSearchParams } from 'next/navigation'
