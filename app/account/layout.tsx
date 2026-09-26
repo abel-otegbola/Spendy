@@ -51,7 +51,7 @@ function AcoountLayout({
                             <span className=" capitalize">{user?.firstname || user?.email?.split('@')[0]}</span>
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                            {user.email || ''}
+                            {user?.email || ''}
                         </p>
                     </div>
                 </div>
