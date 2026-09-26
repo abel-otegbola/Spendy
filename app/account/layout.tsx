@@ -39,7 +39,7 @@ function AcoountLayout({
               <div className="flex items-center gap-6">
                 <Link href="/inbox"> <button className="p-[6px] h-8 w-8 rounded-full bg-gray-100 dark:bg-gray-500/[0.05] outline outline-offset-2 outline-secondary/[0.2]"><BellIcon size={20} /></button></Link>
                 
-                <div className={`flex items-center gap-2 p-1 md:mr-0 mr-6`} onClick={() => setOpen(!open)}>
+                <div className={`flex items-center gap-2 p-1 md:mr-0`} onClick={() => setOpen(!open)}>
                     {/* User Avatar */}
                     <div className="w-9 h-9 rounded-full bg-border flex items-center justify-center text-white font-bold  flex-shrink-0">
                         {getUserInitial()}
