@@ -62,7 +62,7 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
     //         const loggedIn = await account.get();
     //         if (!loggedIn) {
     //             toast.error('You must be logged in to accept the invite');
-    //             router.push("/auth/login?callbackURL=/account/dashboard");
+    //             router.push("/auth/login?callbackURL=/account");
     //             return false;
     //         }
 
@@ -125,7 +125,7 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
                 handleCodeInApp: true,
             });
             setPopup({ type: "success", msg: "Signup Successful" });
-            router.push(callbackUrl || "/account/dashboard");
+            router.push(callbackUrl || "/account");
         } catch (error) {
             setPopup({ type: "error", msg: error instanceof Error ? error.message.replace("Firebase: Error", "") : "Signup failed" });
         } finally {
@@ -163,7 +163,7 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
             await auth.currentUser?.reload();
             setUser(auth.currentUser);
             setPopup({ type: "success", msg: "Email verified successfully" });
-            router.push("/account/dashboard");
+            router.push("/account");
         } catch (error) {
             console.error('Failed to update email verification', error);
             setPopup({ type: 'error', msg: error instanceof Error ? error.message : 'Failed to verify email' });

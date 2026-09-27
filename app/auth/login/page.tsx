@@ -33,7 +33,7 @@ export default function Login() {
               enableReinitialize={true}
               validationSchema={loginSchema}
               onSubmit={(values, { setSubmitting }) => {
-                signIn(values.email, values.password, callbackURL || "/account/dashboard");
+                signIn(values.email, values.password, callbackURL || "/account");
                 setSubmitting(false);
               }}
             >
