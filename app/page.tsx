@@ -177,14 +177,14 @@ export default function Page() {
               title: "Create your account",
               text: "Setup your account in seconds by signing up.",
               icon: Link2,
-              img: <CreateAccount  className="text-white dark:text-[#101010] w-[120%] h-auto mx-auto" />
+              img: <CreateAccount  className="text-white dark:text-[#101010] w-full h-auto mx-auto" />
             },
             {
               number: 2,
               title: "Connect your accounts",
               text: "Setup your financial records with just one click.",
               icon: Target,
-              img: <ConnectAccount  className="text-white dark:text-[#101010] scale-75 h-auto mx-auto" />
+              img: <ConnectAccount  className="text-white dark:text-[#101010] w-full scale-150 mb-20 h-auto mx-auto" />
             },
             {
               number: 3,
@@ -196,8 +196,8 @@ export default function Page() {
             },
           ].map(({ number, title, text, img }) => (
             <div key={number} className={`flex min-h-[230px] flex-col gap-8 md:rounded-[20px] rounded-[10px] bg-gray-100/[0.5] dark:bg-[#101010] w-full p-6 border-gray-100 dark:border-gray-500/[0.1] md:min-h-[270px]`}>
-              <div className="min-h-[160px] flex items-end justify-center flex-1 rounded-lg min-h-[200px] bg-gradient-to-b from-white dark:from-[#202020] overflow-hidden aspect-4/3">
-                <ScrollAnimate animation="slideUp" delay={number * 0.2} innerClassName="flex justify-center w-full overflow-hidden">
+              <div className="min-h-[160px] flex items-end justify-center flex-1 rounded-lg min-h-[200px] bg-gradient-to-b from-white dark:from-[#202020] overflow-hidden aspect-4/3 w-full">
+                <ScrollAnimate animation="slideUp" delay={number * 0.2} innerClassName="flex justify-center w-full">
                   {img}
                 </ScrollAnimate>
               </div>
